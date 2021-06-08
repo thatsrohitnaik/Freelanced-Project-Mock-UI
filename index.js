@@ -120,10 +120,16 @@ $(document).ready(function () {
                             <li class="list-group-item">`+ email + `</li>
                             <li class="list-group-item"><input class="form-control" type="text" /></li>
                             <li class="list-group-item">
-                                <div class="row">
-                                    <button class="btn">Alway Redact</button>
-                                    <button class="btn">Never Redact</button>
-                                    <button class="btn">Proceed Direct</button>
+                                <div class="expanded-row-btn-group btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-secondary active">
+                                    <input type="radio" name="options" id="option1" checked> Alway Redact
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="options" id="option2"> Never Redact
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="options" id="option3"> Proceed Direct
+                                </label>
                                 </div>
                             </li>
                         </ul>
@@ -220,9 +226,17 @@ $(document).ready(function () {
                             <li class="list-group-item"><input class="form-control" type="text" /></li>
                             <li class="list-group-item">
                                 <div class="row">
-                                    <button class="btn">Alway Redact</button>
-                                    <button class="btn">Never Redact</button>
-                                    <button class="btn">Proceed Direct</button>
+                                <div class="expanded-row-btn-group btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-secondary active">
+                                    <input type="radio" name="optionsa" id="optiona1" checked> Alway Redact
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="optionsa" id="optiona2"> Never Redact
+                                </label>
+                                <label class="btn btn-secondary">
+                                    <input type="radio" name="optionsa" id="optiona3"> Proceed Direct
+                                </label>
+                                </div>
                                 </div>
                             </li>
                         </ul>
