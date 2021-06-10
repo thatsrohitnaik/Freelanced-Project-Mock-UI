@@ -1,0 +1,22 @@
+{
+  "name": "rss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thatsrohitnaik/sunshell-project-rss.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thatsrohitnaik/sunshell-project-rss/issues"
+  },
+  "homepage": "https://github.com/thatsrohitnaik/sunshell-project-rss#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
