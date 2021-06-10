@@ -226,6 +226,7 @@
 }
 .stepper__item:last-child {
   -webkit-clip-path: polygon(20px 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+ clip-path: polygon(20px 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 .stepper__item.current {
   background: var(--orange);
@@ -609,6 +610,7 @@ body {
   .stepper__item {
     margin: 0 0 0 -19px;
     -webkit-clip-path: polygon(20px 50%, 0% 0%, calc(100% - 20px) 0%, 100% 50%, calc(100% - 20px) 100%, 0% 100%);
+    clip-path: polygon(20px 50%, 0% 0%, calc(100% - 20px) 0%, 100% 50%, calc(100% - 20px) 100%, 0% 100%);
   }
   .colapse-button-toggle {
     display: none;
