@@ -468,7 +468,7 @@ tfoot tr th {
 .expanded-row .save {
   width: 80% !important;
   color: var(--white);
-  height: 50px;
+  height: 40px;
   font-size: large;
   background-color: var(--primary);
   margin: auto;
@@ -695,6 +695,9 @@ body {
   }
   .expanded-row span {
     padding-left: 5px;
+  }
+  #notification {
+    margin-left: 2px;
   }
 }
 @media (min-width: 576px) {
