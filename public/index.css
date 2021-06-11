@@ -393,6 +393,7 @@ tfoot tr th {
 }
 .dataTables_length {
   margin-left: 5% !important;
+  font-size: smaller !important;
 }
 .dataTables_paginate {
   margin-right: 5% !important;
