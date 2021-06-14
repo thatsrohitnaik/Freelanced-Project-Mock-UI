@@ -71,7 +71,7 @@
 }
 
 .notification span {
-  font-size: x-small;
+  font-size: xx-small;
 }
 
 .notification i {
@@ -113,6 +113,7 @@
 
 .font-size-smaller {
   font-size: small;
+  font-weight: 600 !important;
 }
 
 .button-big {
@@ -498,7 +499,7 @@ tfoot tr th {
 }
 
 .expanded-row .radio-box span {
-  width: 40%;
+  width: 35%;
 }
 
 .expanded-row .radio-box .form-check {
@@ -531,6 +532,10 @@ tfoot tr th {
 .expanded-row .list-group-item:first-child {
   padding-bottom: 0px;
   height: 40px;
+}
+
+.expanded-row .list-group-item{
+  padding: 5px;
 }
 
 .expanded-row .form-check {
@@ -611,14 +616,10 @@ body {
 .nav-tabs .nav-item.show .nav-link {
   border-top: 4px solid var(--orange) !important;
 }
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active
-{
-font-weight : 600;
-}
-
 
 .nav-tabs .nav-link.active {
   border-top: 4px solid var(--orange) !important;
+  color: black;
 }
 
 .nav-tabs .nav-link {
@@ -804,6 +805,9 @@ font-weight : 600;
   .colapse-button-toggle {
     display: none;
   }
+  .padding-left{
+    padding-left: 100px;
+  }
 }
 
 @media (max-width: 960px) {
@@ -843,12 +847,14 @@ font-weight : 600;
   #notification {
     margin-left: 2px;
   }
+  .padding-left{
+    padding-left: 0px;
+  }
 }
 
 @media (min-width: 576px) {
   .form-inline .form-check {
-    text-align: left !important;
-    justify-content: end !important;
+    justify-content: left !important;
   }
 
 }
@@ -866,7 +872,7 @@ font-weight : 600;
     
     
     .md-stepper-horizontal div:first-child .md-step-circle {
-      margin-left: 10%;
+      margin-left: 0%;
     }
     .md-stepper-horizontal div:last-child .md-step-bar-left {
       right: 21%;
@@ -874,7 +880,7 @@ font-weight : 600;
       
       
       .md-stepper-horizontal div:last-child .md-step-circle {
-        margin-right: 10%;
+        margin-right: 0%;
       }
 }
 .sidenav {
@@ -888,6 +894,11 @@ font-weight : 600;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+}
+
+#sidenavTab li a{
+ font-size: small;
+ font-weight: 600;
 }
 
 .sidenav .closebtn {
@@ -941,6 +952,10 @@ font-weight : 600;
   box-sizing: border-box;
   border: none;
   font-size: smaller;
+}
+
+.text-align-start{
+  text-align: start;
 }
 
 .form .input-div {
@@ -1097,8 +1112,10 @@ input:focus, textarea:focus, select:focus, select{
 .steper-header{
   width: fit-content;
   width: -moz-fit-content;
-padding-top: 20px;
+padding-top: 80px;
 padding-left: 60px;
+font-size: 14px;
+margin-bottom: 0px;
 }
 
 .align-right{
@@ -1115,3 +1132,4 @@ padding-left: 60px;
   padding-left: 0px;
   box-shadow: none !important;
 }
+

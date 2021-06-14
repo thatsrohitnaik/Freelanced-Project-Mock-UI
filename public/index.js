@@ -40,7 +40,7 @@ $(document).ready(function () {
       var title = $(this).text();
       if (title) {
         $(this).html(
-          '<input type="text" class="fas" type="text" placeholder="&#xf002; Search ' +
+          '<input type="text" class="fas text-align-start" type="text" placeholder="&#xf002; Search ' +
             title +
             '" />'
         );
@@ -112,7 +112,7 @@ $(document).ready(function () {
   
             var expanded_row =
               `    <div class="row expanded-row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <ul class="list-group">
                         <li class="list-group-item"><span>` +
               email +
@@ -133,8 +133,8 @@ $(document).ready(function () {
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-3">
-                        <ul class="list-group">
+                    <div class="col-lg-4">
+                        <ul class="list-group padding-left">
                             <li class="list-group-item"></li>
                             <li class="list-group-item">
                                 <div class="row radio-box">
@@ -155,15 +155,15 @@ $(document).ready(function () {
                             </li>
                             <li class="list-group-item">
                                 <div class="row radio-box">
-                                    <span>REGEX</span>
+                                    <span>CLASSIFICATION</span>
                                     <div class="form-check">
-                                    <label class="radio-container">True
+                                    <label class="radio-container">DS
                                     <input type="radio" checked="checked" name="radio-name2" id="radio-name2-1">
                                     <span class="checkmark"></span>
                                   </label>
                                     </div>
                                     <div class="form-check">
-                                    <label class="radio-container">False
+                                    <label class="radio-container">NON DS
                                     <input type="radio" checked="checked" name="radio-name2" id="radio-name2-1">
                                     <span class="checkmark"></span>
                                   </label>
@@ -173,19 +173,19 @@ $(document).ready(function () {
                         </ul>
                     </div>
                     <div class="col-lg-3">
-                        <ul class="list-group">
+                        <ul class="list-group padding-left">
                             <li class="list-group-item"></li>
                             <li class="list-group-item">
                                 <div class="row radio-box">
-                                    <span>CLASSIFICATION</span>
+                                    <span>REGEX</span>
                                     <div class="form-check">
-                                    <label class="radio-container">DS
+                                    <label class="radio-container">True
                                     <input type="radio" checked="checked" name="radio-name3" id="radio-name3-1">
                                     <span class="checkmark"></span>
                                   </label>
                                     </div>
                                     <div class="form-check">
-                                    <label class="radio-container">Non DS
+                                    <label class="radio-container">False
                                     <input type="radio" checked="checked" name="radio-name3" id="radio-name3-1">
                                     <span class="checkmark"></span>
                                   </label>
@@ -219,7 +219,7 @@ $(document).ready(function () {
                     </div>
                 </div>
                 <div class="row expanded-row">
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <ul class="list-group">
                             <li class="list-group-item"><span>` +
               email +
@@ -242,8 +242,8 @@ $(document).ready(function () {
                             </li>
                         </ul>
                     </div>
-                    <div class="col-lg-3">
-                        <ul class="list-group">
+                    <div class="col-lg-4">
+                        <ul class="list-group padding-left">
                             <li class="list-group-item"></li>
                             <li class="list-group-item">
                                 <div class="row radio-box">
@@ -264,15 +264,15 @@ $(document).ready(function () {
                             </li>
                             <li class="list-group-item">
                                 <div class="row radio-box">
-                                    <span>REGEX</span>
+                                    <span>CLASSIFICATION</span>
                                     <div class="form-check">
-                                    <label class="radio-container">True
+                                    <label class="radio-container">DS
                                     <input type="radio" checked="checked" name="radio1-name2" id="radio1-name2-1">
                                     <span class="checkmark"></span>
                                   </label>
                                     </div>
                                     <div class="form-check">
-                                    <label class="radio-container">False
+                                    <label class="radio-container">NO DS
                                     <input type="radio" checked="checked" name="radio1-name2" id="radio1-name2-1">
                                     <span class="checkmark"></span>
                                   </label>
@@ -282,13 +282,13 @@ $(document).ready(function () {
                         </ul>
                     </div>
                     <div class="col-lg-3">
-                        <ul class="list-group">
+                        <ul class="list-group padding-left">
                             <li class="list-group-item"></li>
                             <li class="list-group-item">
                                 <div class="row radio-box">
-                                    <span>CLASSIFICATION</span>
+                                    <span>REGEX</span>
                                     <div class="form-check">
-                                    <label class="radio-container">DS
+                                    <label class="radio-container">TRUE
                                     <input type="radio" checked="checked" name="radio1-name3" id="radio1-name3-1">
                                     <span class="checkmark"></span>
                                   </label>
