@@ -1,103 +1,133 @@
 $(document).ready(function () {
-    $('#info-table').DataTable({
-        responsive: {
-            details: {
-                renderer: function (api, rowIdx, columns) {
-                    var data = $.map(columns, function (col, i) {
-                        return col.hidden && col.title ?
-                            '<div class="div-row col-md-12" data-dt-row="' + col.rowIndex + '" data-dt-column="' + col.columnIndex + '">' +
-                            '<span class="bold">' + col.title + '' + '</span> ' +
-                            '<span>' + col.data + '</span>' +
-                            '</div>' :
-                            '';
-                    }).join('');
-                    return data ? '<div class="row">' + data + '</div>' : false;
-                }
-            }
-        },
-        "dom": '',
-        "columnDefs": [{
-            "targets": 'no-sort',
-            "orderable": false,
-            "order": []
-        }]
-    });
-});
-
-$(document).ready(function () {
-    $('#mainTable tfoot th').each(function () {
-        var title = $(this).text();
-        if (title) {
-            $(this).html('<input type="text" class="fas" type="text" placeholder="&#xf002; Search ' + title + '" />');
+    $("#info-table").DataTable({
+      responsive: {
+        details: {
+          renderer: function (api, rowIdx, columns) {
+            var data = $.map(columns, function (col, i) {
+              return col.hidden && col.title
+                ? '<div class="div-row col-md-12" data-dt-row="' +
+                    col.rowIndex +
+                    '" data-dt-column="' +
+                    col.columnIndex +
+                    '">' +
+                    '<span class="bold">' +
+                    col.title +
+                    "" +
+                    "</span> " +
+                    "<span>" +
+                    col.data +
+                    "</span>" +
+                    "</div>"
+                : "";
+            }).join("");
+            return data ? '<div class="row">' + data + "</div>" : false;
+          }
         }
-    });
-
-    var table = $('#mainTable').DataTable({
-        "dom": '<<t>lp>',
-        "ajax": "data/mainTable.json",
-        "pageLength": 5,
-        "lengthMenu": [ 5, 10, 25, 50, 75, 100 ],
-        "language": {
-            "paginate": {
-                "previous": "<",
-                "next": ">"
-            },
-            "lengthMenu": "Pages Per Row _MENU_  ",
-        },
-        "columnDefs": [{
-            "targets": [0, 9],
-            "data": null,
-            "defaultContent": "<span></span>",
-            "orderable": false,
-        },
-        { "targets": 1, "data": "email" },
-        { "targets": 2, "data": "person" },
-        { "targets": 3, "data": "fileCount" },
-        { "targets": 4, "data": "fromCount" },
-        { "targets": 5, "data": "toCount" },
-        { "targets": 6, "data": "ccCount" },
-        { "targets": 7, "data": "classification" },
+      },
+      dom: "",
+      columnDefs: [
         {
-            "targets": 8,
-            "data": null,
-            "orderable": false,
-            "defaultContent": '<span class="fas fa-ellipsis-v font-color-darkgray"></span>'
+          targets: "no-sort",
+          orderable: false,
+          order: []
         }
-
-        ],
-        responsive: {
-            details: {
-                renderer: function (api, rowIdx, columns) {
-                    var data = $.map(columns, function (col, i) {
-                        return col.hidden && col.title ?
-                            '<div class="div-row col-md-12" data-dt-row="' + col.rowIndex + '" data-dt-column="' + col.columnIndex + '">' +
-                            '<span class="bold">' + col.title + '' + '</span> ' +
-                            '<span>' + col.data + '</span>' +
-                            '</div>' :
-                            '';
-                    }).join('');
-
-                    console.log(data)
-
-                    var divData = data ? '<div class="row background-default">' + data + '</div>' : '';
-
-                    var email = columns[1].data;
-
-                    var expanded_row = `    <div class="row expanded-row">
+      ]
+    });
+  });
+  
+  $(document).ready(function () {
+    $("#mainTable tfoot th").each(function () {
+      var title = $(this).text();
+      if (title) {
+        $(this).html(
+          '<input type="text" class="fas" type="text" placeholder="&#xf002; Search ' +
+            title +
+            '" />'
+        );
+      }
+    });
+  
+    var table = $("#mainTable").DataTable({
+      dom: "<<t>lp>",
+      ajax: "data/mainTable.json",
+      pageLength: 5,
+      lengthMenu: [5, 10, 25, 50, 75, 100],
+      language: {
+        paginate: {
+          previous: "<",
+          next: ">"
+        },
+        lengthMenu: "Pages Per Row _MENU_  "
+      },
+      columnDefs: [
+        {
+          targets: [0, 9],
+          data: null,
+          defaultContent: "<span></span>",
+          orderable: false
+        },
+        { targets: 1, data: "email" },
+        { targets: 2, data: "person" },
+        { targets: 3, data: "fileCount" },
+        { targets: 4, data: "fromCount" },
+        { targets: 5, data: "toCount" },
+        { targets: 6, data: "ccCount" },
+        { targets: 7, data: "classification" },
+        {
+          targets: 8,
+          data: null,
+          orderable: false,
+          defaultContent:
+            '<span class="fas fa-ellipsis-v font-color-darkgray"></span>'
+        }
+      ],
+      responsive: {
+        details: {
+          renderer: function (api, rowIdx, columns) {
+            var data = $.map(columns, function (col, i) {
+              return col.hidden && col.title
+                ? '<div class="div-row col-md-12" data-dt-row="' +
+                    col.rowIndex +
+                    '" data-dt-column="' +
+                    col.columnIndex +
+                    '">' +
+                    '<span class="bold">' +
+                    col.title +
+                    "" +
+                    "</span> " +
+                    "<span>" +
+                    col.data +
+                    "</span>" +
+                    "</div>"
+                : "";
+            }).join("");
+  
+            console.log(data);
+  
+            var divData = data
+              ? '<div class="row background-default">' + data + "</div>"
+              : "";
+  
+            var email = columns[1].data;
+  
+            var expanded_row =
+              `    <div class="row expanded-row">
                     <div class="col-lg-4">
                         <ul class="list-group">
-                        <li class="list-group-item"><span>`+ email + `</span></li>
+                        <li class="list-group-item"><span>` +
+              email +
+              `</span></li>
                         <li class="list-group-item"><input class="form-control" type="text" /></li>
                             <li class="list-group-item">
                                 <div class="expanded-row-btn-group btn-group btn-group-toggle" data-toggle="buttons">
                                 <label class="btn btn-secondary active">
-                                    <input type="radio" name="options" id="option1" checked> Alway Redact
+                                    <input type="radio" name="options" id="option1" checked> ALWAYS REDACT
                                 </label>
                                 <label class="btn btn-secondary">
-                                    <input type="radio" name="options" id="option2"> Never Redact
+                                    <input type="radio" name="options" id="option2"> NEVER REDACT
                                 </label>
                                 <label class="btn btn-secondary">
-                                    <input type="radio" name="options" id="option3"> Proceed Direct
+                                    <input type="radio" name="options" id="option3"> PROCEED DIRECT
                                 </label>
                                 </div>
                             </li>
@@ -184,26 +214,28 @@ $(document).ready(function () {
                     <div class="col-lg-2">
                         <ul class="list-group">
                             <li class="list-group-item"></li>
-                            <li class="list-group-item"><button class="btn save"> save </button></li>
+                            <li class="list-group-item"><button class="btn save"> SAVE </button></li>
                         </ul>
                     </div>
                 </div>
                 <div class="row expanded-row">
                     <div class="col-lg-4">
                         <ul class="list-group">
-                            <li class="list-group-item"><span>`+ email + `</span></li>
+                            <li class="list-group-item"><span>` +
+              email +
+              `</span></li>
                             <li class="list-group-item"><input class="form-control" type="text" /></li>
                             <li class="list-group-item">
                                 <div class="row">
                                 <div class="expanded-row-btn-group btn-group btn-group-toggle" data-toggle="buttons">
                                 <label class="btn btn-secondary active">
-                                    <input type="radio" name="optionsa" id="optiona1" checked> Alway Redact
+                                    <input type="radio" name="optionsa" id="optiona1" checked> ALWAYS REDACT
                                 </label>
                                 <label class="btn btn-secondary">
-                                    <input type="radio" name="optionsa" id="optiona2"> Never Redact
+                                    <input type="radio" name="optionsa" id="optiona2"> NEVER REDACT
                                 </label>
                                 <label class="btn btn-secondary">
-                                    <input type="radio" name="optionsa" id="optiona3"> Proceed Direct
+                                    <input type="radio" name="optionsa" id="optiona3"> PROCEED DIRECT
                                 </label>
                                 </div>
                                 </div>
@@ -291,48 +323,46 @@ $(document).ready(function () {
                     <div class="col-lg-2">
                         <ul class="list-group">
                             <li class="list-group-item"></li>
-                            <li class="list-group-item"><button class="btn save"> save </button></li>
+                            <li class="list-group-item"><button class="btn save"> SAVE </button></li>
                         </ul>
                     </div>
                 </div>
                 `;
-
-                    return expanded_row ? divData + expanded_row : false;
-                }
-            }
-        },
-        order: [[1, 'asc']],
-        initComplete: function () {
-            // Apply the search
-            this.api().columns().every(function () {
-                var that = this;
-
-                $('input', this.footer()).on('keyup change clear', function () {
-                    if (that.search() !== this.value) {
-                        that
-                            .search(this.value)
-                            .draw();
-                    }
-                });
-            });
+  
+            return expanded_row ? divData + expanded_row : false;
+          }
         }
+      },
+      order: [[1, "asc"]],
+      initComplete: function () {
+        // Apply the search
+        this.api()
+          .columns()
+          .every(function () {
+            var that = this;
+  
+            $("input", this.footer()).on("keyup change clear", function () {
+              if (that.search() !== this.value) {
+                that.search(this.value).draw();
+              }
+            });
+          });
+      }
     });
-});
-
-function openNav() {
-
+  });
+  
+  function openNav() {
     var elmnt = document.getElementById("body");
     var width = elmnt.offsetWidth || "70%";
-
-     if(width <800){
-        document.getElementById("mySidenav").style.width = "100%";
-
-     }
-     else{
-        document.getElementById("mySidenav").style.width = "70%";
-     }
+  
+    if (width < 800) {
+      document.getElementById("mySidenav").style.width = "100%";
+    } else {
+      document.getElementById("mySidenav").style.width = "70%";
+    }
   }
   
   function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
   }
+  
