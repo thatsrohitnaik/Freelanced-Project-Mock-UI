@@ -611,6 +611,11 @@ body {
 .nav-tabs .nav-item.show .nav-link {
   border-top: 4px solid var(--orange) !important;
 }
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active
+{
+font-weight : 600;
+}
+
 
 .nav-tabs .nav-link.active {
   border-top: 4px solid var(--orange) !important;
@@ -913,6 +918,7 @@ body {
   text-align: center;
   width: 70%;
   margin: auto;
+  font-size: 14px; 
 }
 
 @media screen and (max-height: 450px) {
@@ -1091,8 +1097,8 @@ input:focus, textarea:focus, select:focus, select{
 .steper-header{
   width: fit-content;
   width: -moz-fit-content;
-margin: auto;
 padding-top: 20px;
+padding-left: 60px;
 }
 
 .align-right{
