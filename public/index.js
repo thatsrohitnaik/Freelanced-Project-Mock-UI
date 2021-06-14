@@ -318,3 +318,21 @@ $(document).ready(function () {
         }
     });
 });
+
+function openNav() {
+
+    var elmnt = document.getElementById("body");
+    var width = elmnt.offsetWidth || "70%";
+
+     if(width <800){
+        document.getElementById("mySidenav").style.width = "100%";
+
+     }
+     else{
+        document.getElementById("mySidenav").style.width = "70%";
+     }
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }

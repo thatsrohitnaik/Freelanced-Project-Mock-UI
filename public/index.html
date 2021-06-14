@@ -25,50 +25,60 @@
     <script src="https://cdn.datatables.net/fixedheader/3.1.8/js/dataTables.fixedHeader.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.7/js/responsive.bootstrap.min.js"></script>
 
-     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index.css" />
 </head>
 
-<body style="font-family: Open Sans">
+<body id="body" style="font-family: Open Sans">
     <nav class="navbar navbar-expand-lg navbar-light bg-light rounded nav-color">
         <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
+            aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsExample09">
-          <ul class="navbar-nav " style="margin-left: auto;">
-            <li class="nav-item" style="display: inline-flex;">
-                <div class="display-inline" style="padding-top:8px;"><div class="icon-shadow"><span class="icon-span far fa-file-alt" style="color: white;"></span></div></div>
-                <div class="dropdown">
-              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My SARS</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown09">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-              </div>
-            </li>
-            <li class="nav-item" style="display: inline-flex;">
-                <div class="display-inline" style="padding-top:8px;"><div class="icon-shadow"><span class="icon-span far fa-file-alt" style="color: white;"></span></div></div>
-                <div class="dropdown">
-              <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome Richard</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown09">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-              </div>
-            </li>
-            <!-- <li style="padding-top:8px;"><div class="display-inline"><div class="icon-shadow"><span class="icon-span far fa-user" style="color: white;"></span></div><span> Welcome Richard</span></div></li> -->
-          </ul>
+            <ul class="navbar-nav " style="margin-left: auto;">
+                <li class="nav-item" style="display: inline-flex;">
+                    <div class="display-inline" style="padding-top:8px;">
+                        <div class="icon-shadow"><span class="icon-span far fa-file-alt" style="color: white;"></span>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My SARS</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown09">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item" style="display: inline-flex;">
+                    <div class="display-inline" style="padding-top:8px;">
+                        <div class="icon-shadow"><span class="icon-span far fa-file-alt" style="color: white;"></span>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown09"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome Richard</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown09">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- <li style="padding-top:8px;"><div class="display-inline"><div class="icon-shadow"><span class="icon-span far fa-user" style="color: white;"></span></div><span> Welcome Richard</span></div></li> -->
+            </ul>
         </div>
-      </nav>
+    </nav>
     <div class="info">
         <span>Details for Richard Smith</span>
         <button type="button" class="button-attached-to-panel button-attached-to-panel-button" data-toggle="collapse"
             data-target="#info">DS
             DETAILS <span class="fas fa-angle-down"></span></button>
-        <button type="button btn-default" class="button-beside-to-panel">
+        <button type="button btn-default" onclick="openNav()" class="button-beside-to-panel">
             SAR SETTINGS
         </button>
         <div class="button-attached-to-panel border-attached-to-panel-div collapse hide" id="info"> </div>
@@ -464,7 +474,136 @@
             Unqualified Files here
         </div>
     </div>
-    <br/>
+    <br />
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&equiv;</a>
+        <div class="header">
+            <p>SAR</p>
+            <p>SETTINGS</p>
+        </div>
+        <p class="wrap-text">Some lengthy text will come here describeing something wonderful.Some lengthy text will
+            come here describeing something wonderful.</p>
+        <ul class="nav nav-tabs row" id="sidenavTab" role="tablist">
+            <li class="nav-item col-md-3">
+                <a class="nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="one"
+                    aria-selected="true">DS Details</a>
+            </li>
+            <li class="nav-item col-md-3">
+                <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="two"
+                    aria-selected="false">General</a>
+            </li>
+            <li class="nav-item col-md-3">
+                <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="three"
+                    aria-selected="false">Known Issues</a>
+            </li>
+            <li class="nav-item col-md-3">
+                <a class="nav-link" id="four-tab" data-toggle="tab" href="#four" role="tab" aria-controls="four"
+                    aria-selected="false">Entity Tables</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="sidenavTab">
+            <div class="tab-pane fade in active show" id="one" role="tabpanel" aria-labelledby="one-tab">
+                <div class="">
+                    <p class="steper-header">
+                        some very impotant message here
+                    </p>
+
+                    <div class="md-stepper-horizontal orange">
+                        <div class="md-step active">
+                          <div class="md-step-circle"><span>1</span></div>
+                          <div class="md-step-bar-left"></div>
+                          <div class="md-step-bar-right"></div>
+                        </div>
+                        <div class="md-step">
+                          <div class="md-step-circle"><span>2</span></div>
+                          <div class="md-step-bar-left"></div>
+                          <div class="md-step-bar-right"></div>
+                        </div>
+                        <div class="md-step">
+                          <div class="md-step-circle"><span>3</span></div>
+                          <div class="md-step-bar-left"></div>
+                          <div class="md-step-bar-right"></div>
+                        </div>
+                      </div>                    
+                    <form class="row form">
+                        <div class="col-md-6">
+                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="FIRST NAME">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="MIDDLE NAME">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="LAST NAME">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="ALIASES">
+                                <div class="chip">
+                                    Jon Snow
+                                    <span onclick="this.parentElement.style.display='none'">&times;</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="JOB TITLE">
+                                <div class="chip">
+                                    Jon Snow
+                                    <span onclick="this.parentElement.style.display='none'">&times;</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="DATE OF BIRTH">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-div">
+                                <select class="form-control select" id="sel1">
+                                    <option>Female</option>
+                                    <option>Male</option>
+                                    <option>Others</option>
+                                  </select>
+                                <div class="chip">
+                                    Jon Snow
+                                    <span onclick="this.parentElement.style.display='none'">&times;</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="EMAIL ADDRESS">
+                                <div class="chip">
+                                    Jon Snow
+                                    <span onclick="this.parentElement.style.display='none'">&times;</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="PHONE NUMBERS">
+                                <div class="chip">
+                                    Jon Snow
+                                    <span onclick="this.parentElement.style.display='none'">&times;</span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row next-div">
+                        <button class="btn align-right"> NEXT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="two" role="tabpanel" aria-labelledby="two-tab">
+General
+            </div>
+            <div class="tab-pane fade" id="three" role="tabpanel" aria-labelledby="three-tab">
+known issues            </div>
+            <div class="tab-pane fade" id="four" role="tabpanel" aria-labelledby="four-tab">
+                Entity 
+            </div>
+        </div>
+    </div>
+
     <script src="index.js"></script>
 
 </body>
