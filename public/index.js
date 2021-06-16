@@ -366,3 +366,25 @@ $(document).ready(function () {
     document.getElementById("mySidenav").style.width = "0";
   }
   
+  function createChip(e){
+    console.log(e)
+    var value = document.getElementById(e).value;
+    document.getElementById(e).value = null;
+    var chipDiv = document.getElementById(e+"Chips").innerHTML;
+    var newChip = null;
+    if(value){
+      newChip = `
+            <div class="chip" >
+             `+value+`
+             <span onclick="this.parentElement.style.display='none'">&times;</span>
+            </div>
+      `
+     
+    }
+    document.getElementById(e+"Chips").innerHTML = chipDiv + newChip;
+
+  }
+
+  $(".stepper__item").click(function() {
+    $(".stepper__item").removeClass('active');
+  });

@@ -24,8 +24,11 @@
     <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/fixedheader/3.1.8/js/dataTables.fixedHeader.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.7/js/responsive.bootstrap.min.js"></script>
-
+    <script src="https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet"
+        href="https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+
 </head>
 
 <body id="body" style="font-family: Open Sans">
@@ -33,7 +36,7 @@
         <a class="navbar-brand" href="#">Navbar</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09"
-            aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+            aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -109,371 +112,387 @@
             </div>
         </div>
     </div>
-    <div id="steps" class="collapse show">
-        <ul class="stepper">
-            <li class="stepper__item current liBorder">
-                <p class="">1 <span>PRE-PROCESS FILES</span></p>
-            </li>
-            <li class="stepper__item  liBorder">
-                <p>2 <span>ENTITY SEARCH</span></p>
-            </li>
-            <li class="stepper__item  liBorder">
-                <p>3 <span>ENTITY CLASSIFICATION</span></p>
-            </li>
-            <li class="stepper__item  liBorder">
-                <p>4 <span>FILE CLASSIFICATION</span></p>
-            </li>
-            <li class="stepper__item liBorder">
-                <p>5 <span>REDACT</span></p>
-            </li>
-            <li class="stepper__item liBorder">
-                <p>6 <span>FINALISE</span></p>
-            </li>
-        </ul>
-    </div>
-    <button type="button" class="colapse-button-toggle btn btn-default btn-sm" data-toggle="collapse"
-        data-target="#steps">
-        <span class="fas fa-angle-up"></span>
-    </button>
-    <div class="row">
-        <div class="col-lg-8" style="padding: 0px;">
-            <div id="notification" class="collapse show row">
-                <div class="col-lg-2 notification">
-                    <div class="card">
-                        <div class="row">
-                            <div class="width-40">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <div class="i-div">
-                                            <i class="fas fa-file-upload font-color-darkgray"></i>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="">
-                                <ul class="list-group list-group-flush height-100">
-                                    <li
-                                        class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
-                                        <span class="top-10">668<span></li>
-                                    <li class="height-50 list-group-item padding-0 font-size-smaller"><span>Input
-                                            Files</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 notification">
-                    <div class="card">
-                        <div class="row">
-                            <div class="width-40">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <div class="i-div">
-                                            <i class="far fa-copy font-color-darkgray"></i>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="">
-                                <ul class="list-group list-group-flush  height-100">
-                                    <li
-                                        class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
-                                        <span class="top-10">223<span></li>
-                                    <li class="height-50 list-group-item padding-0 font-size-smaller">
-                                        <span>Duplicates</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 notification">
-                    <div class="card">
-                        <div class="row">
-                            <div class="width-40">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <div class="i-div">
-                                            <i class="fas fa-paperclip font-color-darkgray"></i>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="">
-                                <ul class="list-group list-group-flush  height-100">
-                                    <li
-                                        class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
-                                        <span class="top-10">160<span></li>
-                                    <li class="height-50 list-group-item padding-0 font-size-smaller">
-                                        <span>Attachments</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 notification">
-                    <div class="card">
-                        <div class="row">
-                            <div class="width-40">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <div class="i-div">
-                                            <i class="fas fa-exclamation-circle font-color-darkgray"></i>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="">
-                                <ul class="list-group list-group-flush  height-100">
-                                    <li
-                                        class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
-                                        <span class="top-10">0<span></li>
-                                    <li class="height-50 list-group-item padding-0 font-size-smaller"><span>Spam</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 notification">
-                    <div class="card">
-                        <div class="row">
-                            <div class="width-40">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <div class="i-div">
-                                            <i class="fas fa-exclamation-triangle font-color-darkgray"></i>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="">
-                                <ul class="list-group list-group-flush  height-100">
-                                    <li
-                                        class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
-                                        <span class="top-10">0<span></li>
-                                    <li class="height-50 list-group-item padding-0 font-size-smaller"><span>Process
-                                            Error</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 notification">
-                    <div class="card">
-                        <div class="row">
-                            <div class="width-40">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <div class="i-div">
-                                            <i class="far fa-envelope font-color-darkgray"></i>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="">
-                                <ul class="list-group list-group-flush  height-100">
-                                    <li
-                                        class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
-                                        <span class="top-10">668<span></li>
-                                    <li class="height-50 list-group-item padding-0 font-size-smaller"><span>msg</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 notification">
-                    <div class="card">
-                        <div class="row">
-                            <div class="width-40">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <div class="i-div">
-                                            <i class="far fa-file-word font-color-darkgray"></i>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="">
-                                <ul class="list-group list-group-flush  height-100">
-                                    <li
-                                        class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
-                                        <span class="top-10">116<span></li>
-                                    <li class="height-50 list-group-item padding-0 font-size-smaller"><span>docx</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 notification">
-                    <div class="card">
-                        <div class="row">
-                            <div class="width-40">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <div class="i-div">
-                                            <i class="far fa-file-excel font-color-darkgray"></i>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="">
-                                <ul class="list-group list-group-flush  height-100">
-                                    <li
-                                        class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
-                                        <span class="top-10">27<span></li>
-                                    <li class="height-50 list-group-item padding-0 font-size-smaller"><span>xlsx</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 notification">
-                    <div class="card">
-                        <div class="row">
-                            <div class="width-40">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <div class="i-div">
-                                            <i class="far fa-file-pdf font-color-darkgray"></i>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="">
-                                <ul class="list-group list-group-flush  height-100">
-                                    <li
-                                        class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
-                                        <span class="top-10">27<span></li>
-                                    <li class="height-50 list-group-item padding-0 font-size-smaller"><span>pdf</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button type="button" class="colapse-button-toggle btn btn-default btn-sm" data-toggle="collapse"
-                data-target="#notification">
-                <span class="fas fa-angle-up"></span>
-            </button>
-        </div>
-        <div class="col-lg-4">
-            <div class="row button-div">
-                <div class="col-6">
-                    <button type="button" class="btn button-big primary-button">
-                        <div>
-                            <i class="fas fa-sync"></i>
-                            <p>RE PROCESS</p>
-                        </div>
-                    </button>
-                </div>
-                <div class="col-6">
-                    <button type="button" class="btn button-big default-button">
-                        <div>
-                            <i class="far fa-edit"></i>
-                            <p>REDACT</p>
-                        </div>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    </div>
-    <ul class="nav nav-tabs row" id="myTab" role="tablist">
-        <li class="nav-item col-md-4">
-            <a class="nav-link active" id="dsemail-tab" data-toggle="tab" href="#dsemail" role="tab"
-                aria-controls="dsemail" aria-selected="true">DS Email Addresses</a>
+    <div>
+    <ul class="stepper" id="mySteps">
+        <li class="stepper__item complete liBorder" data-toggle="tab" href="#step1">
+            <p>1
+                <span>PRE-PROCESS FILES</span></p>
         </li>
-        <li class="nav-item col-md-4">
-            <a class="nav-link" id="qfiles-tab" data-toggle="tab" href="#qfiles" role="tab" aria-controls="qfiles"
-                aria-selected="false">Qualified Files</a>
+        <li class="stepper__item current liBorder" data-toggle="tab" href="#step2">
+            <p>2 <span>ENTITY SEARCH</span></p>
         </li>
-        <li class="nav-item col-md-4">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#uqfiles" role="tab" aria-controls="uqfiles"
-                aria-selected="false">Unqualified Files</a>
+        <li class="stepper__item  liBorder" data-toggle="tab" href="#step3">
+            <p>3 <span>ENTITY CLASSIFICATION</span></p>
+        </li>
+        <li class="stepper__item  liBorder" data-toggle="tab" href="#step4">
+            <p>4 <span>FILE CLASSIFICATION</span></p>
+        </li>
+        <li class="stepper__item liBorder" data-toggle="tab" href="#step5">
+            <p>5 <span>REDACT</span></p>
+        </li>
+        <li class="stepper__item liBorder" data-toggle="tab" href="#step6">
+            <p>6 <span>FINALISE</span></p>
         </li>
     </ul>
-    <div class="row">
-        <div class="dropdown-div">
-            <div>
-                <button class="btn  dropdown-toggle" type="button" id="columnMenu1" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Choose Column
-                </button>
-                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="columnMenu">
-                    <li class="dropdown-item"><a href="#">File Name</a></li>
-                    <li class="dropdown-item"><a href="#">Full Name</a></li>
-                    <li class="dropdown-item"><a href="#">Redact</a></li>
-                </ul>
+    <div class="tab-content">
+        <div id="step1" class="tab-pane fade show active">
+            <div class="row">
+                <div class="col-lg-8" style="padding: 0px;">
+                    <div id="notification" class="row">
+                        <div class="col-lg-2 notification">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="width-40">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div class="i-div">
+                                                    <i class="fas fa-file-upload font-color-darkgray"></i>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="">
+                                        <ul class="list-group list-group-flush height-100">
+                                            <li
+                                                class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
+                                                <span class="top-10">668<span></li>
+                                            <li class="height-50 list-group-item padding-0 font-size-smaller">
+                                                <span>Input
+                                                    Files</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 notification">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="width-40">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div class="i-div">
+                                                    <i class="far fa-copy font-color-darkgray"></i>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="">
+                                        <ul class="list-group list-group-flush  height-100">
+                                            <li
+                                                class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
+                                                <span class="top-10">223<span></li>
+                                            <li class="height-50 list-group-item padding-0 font-size-smaller">
+                                                <span>Duplicates</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 notification">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="width-40">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div class="i-div">
+                                                    <i class="fas fa-paperclip font-color-darkgray"></i>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="">
+                                        <ul class="list-group list-group-flush  height-100">
+                                            <li
+                                                class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
+                                                <span class="top-10">160<span></li>
+                                            <li class="height-50 list-group-item padding-0 font-size-smaller">
+                                                <span>Attachments</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 notification">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="width-40">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div class="i-div">
+                                                    <i class="fas fa-exclamation-circle font-color-darkgray"></i>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="">
+                                        <ul class="list-group list-group-flush  height-100">
+                                            <li
+                                                class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
+                                                <span class="top-10">0<span></li>
+                                            <li class="height-50 list-group-item padding-0 font-size-smaller">
+                                                <span>Spam</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 notification">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="width-40">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div class="i-div">
+                                                    <i class="fas fa-exclamation-triangle font-color-darkgray"></i>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="">
+                                        <ul class="list-group list-group-flush  height-100">
+                                            <li
+                                                class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
+                                                <span class="top-10">0<span></li>
+                                            <li class="height-50 list-group-item padding-0 font-size-smaller">
+                                                <span>Process
+                                                    Error</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 notification">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="width-40">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div class="i-div">
+                                                    <i class="far fa-envelope font-color-darkgray"></i>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="">
+                                        <ul class="list-group list-group-flush  height-100">
+                                            <li
+                                                class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
+                                                <span class="top-10">668<span></li>
+                                            <li class="height-50 list-group-item padding-0 font-size-smaller">
+                                                <span>msg</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 notification">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="width-40">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div class="i-div">
+                                                    <i class="far fa-file-word font-color-darkgray"></i>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="">
+                                        <ul class="list-group list-group-flush  height-100">
+                                            <li
+                                                class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
+                                                <span class="top-10">116<span></li>
+                                            <li class="height-50 list-group-item padding-0 font-size-smaller">
+                                                <span>docx</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 notification">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="width-40">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div class="i-div">
+                                                    <i class="far fa-file-excel font-color-darkgray"></i>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="">
+                                        <ul class="list-group list-group-flush  height-100">
+                                            <li
+                                                class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
+                                                <span class="top-10">27<span></li>
+                                            <li class="height-50 list-group-item padding-0 font-size-smaller">
+                                                <span>xlsx</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 notification">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="width-40">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">
+                                                <div class="i-div">
+                                                    <i class="far fa-file-pdf font-color-darkgray"></i>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="">
+                                        <ul class="list-group list-group-flush  height-100">
+                                            <li
+                                                class="height-50 list-group-item padding-0 font-size-smaller font-color-darkgray">
+                                                <span class="top-10">27<span></li>
+                                            <li class="height-50 list-group-item padding-0 font-size-smaller">
+                                                <span>pdf</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="row button-div">
+                        <div class="col-6">
+                            <button type="button" class="btn button-big primary-button">
+                                <div>
+                                    <i class="fas fa-sync"></i>
+                                    <p>RE PROCESS</p>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn button-big default-button">
+                                <div>
+                                    <i class="far fa-edit"></i>
+                                    <p>REDACT</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div>
-                <button class="btn  dropdown-toggle" type="button" id="actionMenu1" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Action
-                </button>
-                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="actionMenu">
-                    <li class="dropdown-item"><a href="#">Do Not Share</a></li>
-                    <li class="dropdown-item"><a href="#">Add To Process</a></li>
-                    <li class="dropdown-submenu">
-                        <a class="dropdown-item" tabindex="-1" href="#">Change Classification</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-item"><a href="#">Share With DS</a></li>
-                            <li class="dropdown-item"><a href="#">Do Not Share</a></li>
-                            <li class="dropdown-item"><a href="#">No Redact</a></li>
+
+            <ul class="nav nav-tabs row" id="myTab" role="tablist">
+                <li class="nav-item col-md-4">
+                    <a class="nav-link active" id="dsemail-tab" data-toggle="tab" href="#dsemail"
+                        aria-selected="true">DS Email Addresses</a>
+                </li>
+                <li class="nav-item col-md-4">
+                    <a class="nav-link" id="qfiles-tab" data-toggle="tab" href="#qfiles">Qualified Files</a>
+                </li>
+                <li class="nav-item col-md-4">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#uqfiles">Unqualified Files</a>
+                </li>
+            </ul>
+            <div class="row">
+                <div class="dropdown-div">
+                    <div>
+                        <button class="btn  dropdown-toggle" type="button" id="columnMenu1" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Choose Column
+                        </button>
+                        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="columnMenu">
+                            <li class="dropdown-item"><a href="#">File Name</a></li>
+                            <li class="dropdown-item"><a href="#">Full Name</a></li>
+                            <li class="dropdown-item"><a href="#">Redact</a></li>
                         </ul>
-                    </li>
-                    <li class="dropdown-item"><a href="#">Change Redaction</a></li>
-                </ul>
+                    </div>
+                    <div>
+                        <button class="btn  dropdown-toggle" type="button" id="actionMenu1" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Action
+                        </button>
+                        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="actionMenu">
+                            <li class="dropdown-item"><a href="#">Do Not Share</a></li>
+                            <li class="dropdown-item"><a href="#">Add To Process</a></li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" tabindex="-1" href="#">Change Classification</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item"><a href="#">Share With DS</a></li>
+                                    <li class="dropdown-item"><a href="#">Do Not Share</a></li>
+                                    <li class="dropdown-item"><a href="#">No Redact</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-item"><a href="#">Change Redaction</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="dsemail">
+                    <div class="container-table">
+                        <table id="mainTable" class="main-table table display nowrap collapsed" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Email</th>
+                                    <th>Person</th>
+                                    <th>File Count</th>
+                                    <th>From Count</th>
+                                    <th>To Count</th>
+                                    <th>CC Count</th>
+                                    <th>Classification</th>
+                                    <th></th>
+                                    <th class="none"></th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th>Email</th>
+                                    <th>Person</th>
+                                    <th>File Count</th>
+                                    <th>From Count</th>
+                                    <th>To Count</th>
+                                    <th>CC Count</th>
+                                    <th>Classification</th>
+                                    <th></th>
+                                    <th class="none"></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="qfiles">
+                    Qualified Files here
+                </div>
+                <div class="tab-pane fade" id="uqfiles">
+                    Unqualified Files here
+                </div>
             </div>
         </div>
-    </div>
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="dsemail" role="tabpanel" aria-labelledby="dsemail-tab">
-            <div class="container-table">
-                <table id="mainTable" class="main-table table display nowrap collapsed" style="width:100%">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Email</th>
-                            <th>Person</th>
-                            <th>File Count</th>
-                            <th>From Count</th>
-                            <th>To Count</th>
-                            <th>CC Count</th>
-                            <th>Classification</th>
-                            <th></th>
-                            <th class="none"></th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th></th>
-                            <th>Email</th>
-                            <th>Person</th>
-                            <th>File Count</th>
-                            <th>From Count</th>
-                            <th>To Count</th>
-                            <th>CC Count</th>
-                            <th>Classification</th>
-                            <th></th>
-                            <th class="none"></th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
+        <div id="step2" class="tab-pane fade">
+            step2
         </div>
-        <div class="tab-pane fade" id="qfiles" role="tabpanel" aria-labelledby="qfiles-tab">
-            Qualified Files here
+        <div id="step3" class="tab-pane fade">
+            step3
         </div>
-        <div class="tab-pane fade" id="uqfiles" role="tabpanel" aria-labelledby="uqfiles-tab">
-            Unqualified Files here
+        <div id="step4" class="tab-pane fade">
+            step4
+        </div>
+        <div id="step5" class="tab-pane fade">
+            step5
+        </div>
+        <div id="step6" class="tab-pane fade">
+            step6
         </div>
     </div>
+</div>
     <br />
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&equiv;</a>
@@ -485,24 +504,21 @@
             come here describeing something wonderful.</p>
         <ul class="nav nav-tabs row" id="sidenavTab" role="tablist">
             <li class="nav-item col-md-3">
-                <a class="nav-link active" id="one-tab" data-toggle="tab" href="#one" role="tab" aria-controls="one"
-                    aria-selected="true">DS Details</a>
+                <a class="nav-link active" id="one-tab" data-toggle="tab" href="#one" aria-selected="true">DS
+                    Details</a>
             </li>
             <li class="nav-item col-md-3">
-                <a class="nav-link" id="two-tab" data-toggle="tab" href="#two" role="tab" aria-controls="two"
-                    aria-selected="false">General</a>
+                <a class="nav-link" id="two-tab" data-toggle="tab" href="#two">General</a>
             </li>
             <li class="nav-item col-md-3">
-                <a class="nav-link" id="three-tab" data-toggle="tab" href="#three" role="tab" aria-controls="three"
-                    aria-selected="false">Known Entities</a>
+                <a class="nav-link" id="three-tab" data-toggle="tab" href="#three">Known Entities</a>
             </li>
             <li class="nav-item col-md-3">
-                <a class="nav-link" id="four-tab" data-toggle="tab" href="#four" role="tab" aria-controls="four"
-                    aria-selected="false">Entity Tables</a>
+                <a class="nav-link" id="four-tab" data-toggle="tab" href="#four">Entity Tables</a>
             </li>
         </ul>
         <div class="tab-content" id="sidenavTab">
-            <div class="tab-pane fade in active show" id="one" role="tabpanel" aria-labelledby="one-tab">
+            <div class="tab-pane fade in active show" id="one">
                 <div class="">
                     <p class="steper-header">
                         ADD BASIC INFORMATION ABOUT THE DATA SUBJECT
@@ -510,52 +526,51 @@
 
                     <div class="md-stepper-horizontal orange">
                         <div class="md-step active">
-                          <div class="md-step-circle"><span>1</span></div>
-                          <div class="md-step-bar-left"></div>
-                          <div class="md-step-bar-right"></div>
+                            <div class="md-step-circle"><span>1</span></div>
+                            <div class="md-step-bar-left"></div>
+                            <div class="md-step-bar-right"></div>
                         </div>
                         <div class="md-step">
-                          <div class="md-step-circle"><span>2</span></div>
-                          <div class="md-step-bar-left"></div>
-                          <div class="md-step-bar-right"></div>
+                            <div class="md-step-circle"><span>2</span></div>
+                            <div class="md-step-bar-left"></div>
+                            <div class="md-step-bar-right"></div>
                         </div>
                         <div class="md-step">
-                          <div class="md-step-circle"><span>3</span></div>
-                          <div class="md-step-bar-left"></div>
-                          <div class="md-step-bar-right"></div>
+                            <div class="md-step-circle"><span>3</span></div>
+                            <div class="md-step-bar-left"></div>
+                            <div class="md-step-bar-right"></div>
                         </div>
-                      </div>                    
+                    </div>
                     <form class="row form">
                         <div class="col-md-6">
                             <div class="input-div"><input type="text" id="fname" name="fname" placeholder="FIRST NAME">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="MIDDLE NAME">
+                            <div class="input-div"><input type="text" id="mname" name="mname" placeholder="MIDDLE NAME">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="LAST NAME">
+                            <div class="input-div"><input type="text" id="lname" name="lname" placeholder="LAST NAME">
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="ALIASES">
-                                <div class="chip">
-                                    Jon Snow
-                                    <span onclick="this.parentElement.style.display='none'">&times;</span>
+                            <div class="input-div">
+                                <input onchange="createChip('aliases')" type="text" id="aliases" name="aliases"
+                                    placeholder="ALIASES">
+                                <div id="aliasesChips">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="JOB TITLE">
-                                <div class="chip">
-                                    Jon Snow
-                                    <span onclick="this.parentElement.style.display='none'">&times;</span>
+                            <div class="input-div"><input onchange="createChip('jobtitle')" type="text" id="jobtitle"
+                                    name="jobtitle" placeholder="JOB TITLE">
+                                <div id="jobtitleChips">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="DATE OF BIRTH">
+                            <div class="input-div"><input type="text" id="dob" name="dob" placeholder="DATE OF BIRTH">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -564,26 +579,20 @@
                                     <option>Female</option>
                                     <option>Male</option>
                                     <option>Others</option>
-                                  </select>
-                                <div class="chip">
-                                    Jon Snow
-                                    <span onclick="this.parentElement.style.display='none'">&times;</span>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-div"><input type="text" onchange="createChip('email')" id="email"
+                                    name="email" placeholder="EMAIL ADDRESS">
+                                <div id="emailChips">
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="EMAIL ADDRESS">
-                                <div class="chip">
-                                    Jon Snow
-                                    <span onclick="this.parentElement.style.display='none'">&times;</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="input-div"><input type="text" id="fname" name="fname" placeholder="PHONE NUMBERS">
-                                <div class="chip">
-                                    Jon Snow
-                                    <span onclick="this.parentElement.style.display='none'">&times;</span>
+                            <div class="input-div"><input type="text" onchange="createChip('phone')" id="phone"
+                                    name="phone" placeholder="PHONE NUMBERS">
+                                <div id="phoneChips">
                                 </div>
                             </div>
                         </div>
@@ -593,13 +602,13 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane fade" id="two" role="tabpanel" aria-labelledby="two-tab">
-General
+            <div class="tab-pane fade" id="two">
+                General
             </div>
-            <div class="tab-pane fade" id="three" role="tabpanel" aria-labelledby="three-tab">
-known Entity            </div>
-            <div class="tab-pane fade" id="four" role="tabpanel" aria-labelledby="four-tab">
-                Entity 
+            <div class="tab-pane fade" id="three">
+                known Entity </div>
+            <div class="tab-pane fade" id="four">
+                Entity
             </div>
         </div>
     </div>

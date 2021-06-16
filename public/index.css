@@ -978,6 +978,7 @@ input:focus, textarea:focus, select:focus, select{
   border-radius: 2px;
   background-color: var(--primary);
   font-size: x-small;
+  color: white;
 }
 
 /* .closebtn {
@@ -1133,3 +1134,15 @@ margin-bottom: 0px;
   box-shadow: none !important;
 }
 
+
+.input-tags {
+  width: 100%;
+  padding: 15px;
+  display: block;
+  margin: 0 auto;
+}
+
+.label-info {
+  background-color: #5bc0de;
+  padding: 3px;
+}
