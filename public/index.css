@@ -1144,15 +1144,22 @@
   margin-bottom:0;
   }
   
-  .align-right {
-  margin:auto;
-  margin-right:60px;
-  background:var(--primary);
-  color:#fff;
+  .form-btn {
+    margin:auto;
+    background:var(--primary);
+    color:#fff;
   width:100px;
   margin-bottom:20px;
   }
+
+  .align-right{
+    margin-right:60px;
+  }
   
+  .align-left{
+    margin-left:60px;
+  }
+
   .select {
   border:none;
   padding-left:0;

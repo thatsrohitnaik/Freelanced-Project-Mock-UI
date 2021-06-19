@@ -389,6 +389,22 @@ $(document).ready(function () {
     $(".stepper__item").removeClass('active');
   });
 
+  $(".md-step").click(function() {
+    $(".md-step").removeClass('active');
+    $(".form-btn").removeClass('active');
+
+  });  
+
+  $(".form-btn").click(function(e) {
+    var id = e.target.attributes.href.value ? e.target.attributes.href.value.replace("#","") : "";
+    console.log(id)
+    $(".md-step").removeClass('active');
+    var classes = document.getElementById(id+"id").className;
+    document.getElementById(id+"id").className = classes+" active";
+ //   $(id+"id").removeClass('active');
+    $(".form-btn").removeClass('active');
+  });  
+
   $(".group-row").hover(function(){
     $(this).addClass("group-row-box-shadow");
     }, function(){
