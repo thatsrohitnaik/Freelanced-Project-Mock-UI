@@ -388,3 +388,9 @@ $(document).ready(function () {
   $(".stepper__item").click(function() {
     $(".stepper__item").removeClass('active');
   });
+
+  $(".group-row").hover(function(){
+    $(this).addClass("group-row-box-shadow");
+    }, function(){
+    $(this).removeClass("group-row-box-shadow");
+  });
