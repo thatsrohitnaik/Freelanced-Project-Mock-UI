@@ -28,7 +28,8 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet"
         href="https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
-
+        <!-- <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
+        <script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script> -->
 </head>
 
 <body id="body" style="font-family: Open Sans">
@@ -437,7 +438,7 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="dsemail">
                         <div class="container-table">
-                            <table id="mainTable" class="main-table table display nowrap collapsed" style="width:100%">
+                            <table id="dsTable" class="main-table table display nowrap collapsed" style="width:100%">
                                 <thead>
                                     <tr>
                                         <th></th>
@@ -470,7 +471,40 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="qfiles">
-                        Qualified Files here
+                        <div class="container-table">
+                            <table id="qfTable" class="main-table table display nowrap collapsed" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th class="responsive-hide"></th>
+                                        <th></th>
+                                        <th>File Name</th>
+                                        <th>Attachment</th>
+                                        <th>Source File</th>
+                                        <th>Ext</th>
+                                        <th>Duplicate</th>
+                                        <th>Duplicate Of</th>
+                                        <th>Spam</th>
+                                        <th>From/To/CCDS</th>
+                                        <th>Processing Error</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th class="responsive-hide"></th>
+                                        <th></th>
+                                        <th>File Name</th>
+                                        <th>Attachment</th>
+                                        <th>Source File</th>
+                                        <th>Ext</th>
+                                        <th>Duplicate</th>
+                                        <th>Duplicate Of</th>
+                                        <th>Spam</th>
+                                        <th>From/To/CCDS</th>
+                                        <th>Processing Error</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="uqfiles">
                         Unqualified Files here
@@ -546,18 +580,19 @@
                         <div class="tab-pane fade in active show" id="formone">
                             <form class="row form">
                                 <div class="col-md-6">
-                                    <div class="input-div"><input type="text" id="fname" name="fname"
-                                            placeholder="FIRST NAME">
-                                    </div>
+                                    <div class="input-div">
+                                        <label for="fname">FIRST NAME</label>
+                                        <input type="text" id="fname" name="fname"> </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="input-div"><input type="text" id="mname" name="mname"
-                                            placeholder="MIDDLE NAME">
-                                    </div>
+                                    <div class="input-div">
+                                        <label for="mname">MIDDLE NAME</label>
+                                        <input type="text" id="mname" name="mname"> </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="input-div"><input type="text" id="lname" name="lname"
-                                            placeholder="LAST NAME">
+                                    <div class="input-div">
+                                        <label for="mname">LAST NAME</label>
+                                        <input type="text" id="lname" name="lname">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -576,18 +611,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="input-div"><input type="text" id="dob" name="dob"
-                                            placeholder="DATE OF BIRTH">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
                                     <div class="input-div">
-                                        <select class="form-control select" id="sel1">
-                                            <option>Female</option>
-                                            <option>Male</option>
-                                            <option>Others</option>
-                                        </select>
-                                    </div>
+                                        <label for="mname">DATE OF BIRTH</label>
+                                        <input type="text" id="dob" name="dob"> </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="input-div"><input type="text" onchange="createChip('email')" id="email"
@@ -603,23 +629,38 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="input-div">
+                                        <label for="mname">GENDER</label>
+                                        <select class="form-control select" id="sel1">
+                                            <option>Female</option>
+                                            <option>Male</option>
+                                            <option>Others</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </form>
                             <div class="row next-div">
-                                <button class="btn form-btn align-right" id="sidenav-next-two-tab" data-toggle="tab" href="#formtwo"> NEXT</button>
-                            </div>        
+                                <button class="btn form-btn align-right" id="sidenav-next-two-tab" data-toggle="tab"
+                                    href="#formtwo"> NEXT</button>
+                            </div>
                         </div>
-                        <div class="tab-pane fade" id="formtwo" > steps 2
-
-                                <div class="row next-div">
-                                    <button class="btn form-btn align-left" id="sidenav-prev-two-tab" data-toggle="tab" href="#formone"> PREVIOUS</button>
-                                    <button class="btn form-btn align-right" id="sidenav-next-two-tab" data-toggle="tab" href="#formthree"> NEXT</button>
-                                </div>            
-                        </div>
-                        <div class="tab-pane fade" id="formthree" > steps 3
+                        <div class="tab-pane fade" id="formtwo"> steps 2
 
                             <div class="row next-div">
-                                <button class="btn form-btn align-left" id="sidenav-prev-three-tab" data-toggle="tab" href="#formtwo"> PREVIOUS</button>
-                            </div>    
+                                <button class="btn form-btn align-left" id="sidenav-prev-two-tab" data-toggle="tab"
+                                    href="#formone">
+                                    PREVIOUS</button>
+                                <button class="btn form-btn align-right" id="sidenav-next-two-tab" data-toggle="tab"
+                                    href="#formthree"> NEXT</button>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="formthree"> steps 3
+
+                            <div class="row next-div">
+                                <button class="btn form-btn align-left" id="sidenav-prev-three-tab" data-toggle="tab"
+                                    href="#formtwo"> PREVIOUS</button>
+                            </div>
                         </div>
                     </div>
                 </div>

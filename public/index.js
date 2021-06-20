@@ -1,122 +1,205 @@
 $(document).ready(function () {
-    $("#info-table").DataTable({
-      responsive: {
-        details: {
-          renderer: function (api, rowIdx, columns) {
-            var data = $.map(columns, function (col, i) {
-              return col.hidden && col.title
-                ? '<div class="div-row col-md-12" data-dt-row="' +
-                    col.rowIndex +
-                    '" data-dt-column="' +
-                    col.columnIndex +
-                    '">' +
-                    '<span class="bold">' +
-                    col.title +
-                    "" +
-                    "</span> " +
-                    "<span>" +
-                    col.data +
-                    "</span>" +
-                    "</div>"
-                : "";
-            }).join("");
-            return data ? '<div class="row">' + data + "</div>" : false;
-          }
-        }
-      },
-      dom: "",
-      columnDefs: [
-        {
-          targets: "no-sort",
-          orderable: false,
-          order: []
-        }
-      ]
-    });
-  });
-  
-  $(document).ready(function () {
-    $("#mainTable tfoot th").each(function () {
-      var title = $(this).text();
-      if (title) {
-        $(this).html(
-          '<input type="text" class="fas text-align-start" type="text" placeholder="&#xf002; Search ' +
-            title +
-            '" />'
-        );
-      }
-    });
-  
-    var table = $("#mainTable").DataTable({
-      dom: "<<t>lp>",
-      ajax: "data/mainTable.json",
-      pageLength: 5,
-      lengthMenu: [5, 10, 25, 50, 75, 100],
-      language: {
-        paginate: {
-          previous: "<",
-          next: ">"
-        },
-        lengthMenu: "Pages Per Row _MENU_  "
-      },
-      columnDefs: [
-        {
-          targets: [0, 9],
-          data: null,
-          defaultContent: "<span></span>",
-          orderable: false
-        },
-        { targets: 1, data: "email" },
-        { targets: 2, data: "person" },
-        { targets: 3, data: "fileCount" },
-        { targets: 4, data: "fromCount" },
-        { targets: 5, data: "toCount" },
-        { targets: 6, data: "ccCount" },
-        { targets: 7, data: "classification" },
-        {
-          targets: 8,
-          data: null,
-          orderable: false,
-          defaultContent:
-            '<span class="fas fa-ellipsis-v font-color-darkgray"></span>'
-        }
-      ],
-      responsive: {
-        details: {
-          renderer: function (api, rowIdx, columns) {
-            var data = $.map(columns, function (col, i) {
-              return col.hidden && col.title
-                ? '<div class="div-row col-md-12" data-dt-row="' +
-                    col.rowIndex +
-                    '" data-dt-column="' +
-                    col.columnIndex +
-                    '">' +
-                    '<span class="bold">' +
-                    col.title +
-                    "" +
-                    "</span> " +
-                    "<span>" +
-                    col.data +
-                    "</span>" +
-                    "</div>"
-                : "";
-            }).join("");
-  
-            console.log(data);
-  
-            var divData = data
-              ? '<div class="row background-default">' + data + "</div>"
+  $("#info-table").DataTable({
+    responsive: {
+      details: {
+        renderer: function (api, rowIdx, columns) {
+          var data = $.map(columns, function (col, i) {
+            return col.hidden && col.title
+              ? '<div class="div-row col-md-12" data-dt-row="' +
+              col.rowIndex +
+              '" data-dt-column="' +
+              col.columnIndex +
+              '">' +
+              '<span class="bold">' +
+              col.title +
+              "" +
+              "</span> " +
+              "<span>" +
+              col.data +
+              "</span>" +
+              "</div>"
               : "";
-  
-            var email = columns[1].data;
-  
-            var expanded_row =
-              `    <div class="row expanded-row">
+          }).join("");
+          return data ? '<div class="row">' + data + "</div>" : false;
+        }
+      }
+    },
+    dom: "",
+    columnDefs: [
+      {
+        targets: "no-sort",
+        orderable: false,
+        order: []
+      }
+    ]
+  });
+});
+
+
+
+$(document).ready(function () {
+  $("#qfTable tfoot th").each(function () {
+    var title = $(this).text();
+    if (title) {
+      console.log(title)
+      $(this).html(
+        '<input type="text" class="fas text-align-start" type="text" placeholder="&#xf002; Search ' +
+        title +
+        '" />'
+      );
+    }
+  }
+  )
+
+  $("#qfTable").DataTable({
+    dom: "<<t>lp>",
+    ajax: "data/qfTable.json",
+    pageLength: 5,
+    lengthMenu: [5, 10, 25, 50, 75, 100],
+    language: {
+      paginate: {
+        previous: "<",
+        next: ">"
+      },
+      lengthMenu: "Pages Per Row _MENU_  "
+    },
+    columnDefs: [
+      {
+        orderable: false,
+        // className: 'select-checkbox',
+        // 'checkboxes': {
+        //   'selectRow': true
+        // },
+        //  data:null,
+         defaultContent:"<span></span>",
+        'targets': 0,
+      },
+      {
+        orderable: false,
+        className: 'select-checkbox',
+        // 'checkboxes': {
+        //   'selectRow': true
+        // },
+         data:null,
+         defaultContent:"<span></span>",
+        'targets': 1,
+      },
+      { targets: 2, data: "fname" },
+      { targets: 3, data: "attachment" },
+      { targets: 4, data: "sourceFile" },
+      { targets: 5, data: "ext" },
+      { targets: 6, data: "duplicate" },
+      { targets: 7, data: "duplicateOf" },
+      { targets: 8, data: "spam" },
+      { targets: 9, data: "fromToCCDS" },
+      { targets: 10, data: "processingError" }
+    ], 
+    select: {
+      style: 'multi',
+        selector: 'td:nth-child(2)'
+      },
+    responsive:true,
+    order: [[1, "asc"]],
+    initComplete: function () {
+      // Apply the search
+      this.api()
+        .columns()
+        .every(function () {
+          var that = this;
+
+          $("input", this.footer()).on("keyup change clear", function () {
+            if (that.search() !== this.value) {
+              that.search(this.value).draw();
+            }
+          });
+        });
+    }
+  });
+
+});
+
+$(document).ready(function () {
+  $("#dsTable tfoot th").each(function () {
+    var title = $(this).text();
+    if (title) {
+      $(this).html(
+        '<input type="text" class="fas text-align-start" type="text" placeholder="&#xf002; Search ' +
+        title +
+        '" />'
+      );
+    }
+  });
+
+  var table = $("#dsTable").DataTable({
+    dom: "<<t>lp>",
+    ajax: "data/dsTable.json",
+    pageLength: 5,
+    lengthMenu: [5, 10, 25, 50, 75, 100],
+    language: {
+      paginate: {
+        previous: "<",
+        next: ">"
+      },
+      lengthMenu: "Pages Per Row _MENU_  "
+    },
+    columnDefs: [
+      {
+        targets: [0, 9],
+        data: null,
+        defaultContent: "<span></span>",
+        orderable: false
+      },
+      { targets: 1, data: "email" },
+      { targets: 2, data: "person" },
+      { targets: 3, data: "fileCount" },
+      { targets: 4, data: "fromCount" },
+      { targets: 5, data: "toCount" },
+      { targets: 6, data: "ccCount" },
+      { targets: 7, data: "classification" },
+      {
+        targets: 8,
+        data: null,
+        orderable: false,
+        defaultContent:
+          '<span class="fas fa-ellipsis-v font-color-darkgray"></span>'
+      }
+    ],
+    responsive: {
+      details: {
+        renderer: function (api, rowIdx, columns) {
+          var data = $.map(columns, function (col, i) {
+            return col.hidden && col.title
+              ? '<div class="div-row col-md-12" data-dt-row="' +
+              col.rowIndex +
+              '" data-dt-column="' +
+              col.columnIndex +
+              '">' +
+              '<span class="bold">' +
+              col.title +
+              "" +
+              "</span> " +
+              "<span>" +
+              col.data +
+              "</span>" +
+              "</div>"
+              : "";
+          }).join("");
+
+          console.log(data);
+
+          var divData = data
+            ? '<div class="row background-default">' + data + "</div>"
+            : "";
+
+          var email = columns[1].data;
+
+          var expanded_row =
+            `    <div class="row expanded-row">
                     <div class="col-lg-3">
                         <ul class="list-group">
                         <li class="list-group-item"><span>` +
-              email +
-              `</span></li>
+            email +
+            `</span></li>
                         <li class="list-group-item"><input class="form-control" type="text" /></li>
                             <li class="list-group-item">
                                 <div class="expanded-row-btn-group btn-group btn-group-toggle" data-toggle="buttons">
@@ -222,8 +305,8 @@ $(document).ready(function () {
                     <div class="col-lg-3">
                         <ul class="list-group">
                             <li class="list-group-item"><span>` +
-              email +
-              `</span></li>
+            email +
+            `</span></li>
                             <li class="list-group-item"><input class="form-control" type="text" /></li>
                             <li class="list-group-item">
                                 <div class="row">
@@ -328,85 +411,86 @@ $(document).ready(function () {
                     </div>
                 </div>
                 `;
-  
-            return expanded_row ? divData + expanded_row : false;
-          }
+
+          return expanded_row ? divData + expanded_row : false;
         }
-      },
-      order: [[1, "asc"]],
-      initComplete: function () {
-        // Apply the search
-        this.api()
-          .columns()
-          .every(function () {
-            var that = this;
-  
-            $("input", this.footer()).on("keyup change clear", function () {
-              if (that.search() !== this.value) {
-                that.search(this.value).draw();
-              }
-            });
-          });
       }
-    });
-  });
-  
-  function openNav() {
-    var elmnt = document.getElementById("body");
-    var width = elmnt.offsetWidth || "70%";
-  
-    if (width < 800) {
-      document.getElementById("mySidenav").style.width = "100%";
-    } else {
-      document.getElementById("mySidenav").style.width = "70%";
+    },
+    order: [[1, "asc"]],
+    initComplete: function () {
+      // Apply the search
+      this.api()
+        .columns()
+        .every(function () {
+          var that = this;
+
+          $("input", this.footer()).on("keyup change clear", function () {
+            if (that.search() !== this.value) {
+              that.search(this.value).draw();
+            }
+          });
+        });
     }
+  });
+});
+
+function openNav() {
+  var elmnt = document.getElementById("body");
+  var width = elmnt.offsetWidth || "70%";
+
+  if (width < 800) {
+    document.getElementById("mySidenav").style.width = "100%";
+  } else {
+    document.getElementById("mySidenav").style.width = "70%";
   }
-  
-  function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-  }
-  
-  function createChip(e){
-    console.log(e)
-    var value = document.getElementById(e).value;
-    document.getElementById(e).value = null;
-    var chipDiv = document.getElementById(e+"Chips").innerHTML;
-    var newChip = null;
-    if(value){
-      newChip = `
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+function createChip(e) {
+  console.log(e)
+  var value = document.getElementById(e).value;
+  document.getElementById(e).value = null;
+  var chipDiv = document.getElementById(e + "Chips").innerHTML;
+  var newChip = null;
+  if (value) {
+    newChip = `
             <div class="chip" >
-             `+value+`
+             `+ value + `
              <span onclick="this.parentElement.style.display='none'">&times;</span>
             </div>
       `
-     
-    }
-    document.getElementById(e+"Chips").innerHTML = chipDiv + newChip;
 
   }
+  document.getElementById(e + "Chips").innerHTML = chipDiv + newChip;
 
-  $(".stepper__item").click(function() {
-    $(".stepper__item").removeClass('active');
-  });
+}
 
-  $(".md-step").click(function() {
-    $(".md-step").removeClass('active');
-    $(".form-btn").removeClass('active');
+$(".stepper__item").click(function () {
+  $(".stepper__item").removeClass('active');
+});
 
-  });  
+$(".md-step").click(function () {
+  $(".md-step").removeClass('active');
+  $(".form-btn").removeClass('active');
 
-  $(".form-btn").click(function(e) {
-    var id = e.target.attributes.href.value ? e.target.attributes.href.value.replace("#","") : "";
-    console.log(id)
-    $(".md-step").removeClass('active');
-    var classes = document.getElementById(id+"id").className;
-    document.getElementById(id+"id").className = classes+" active";
- //   $(id+"id").removeClass('active');
-    $(".form-btn").removeClass('active');
-  });  
+});
 
-  $(".group-row").hover(function(){
-    $(this).addClass("group-row-box-shadow");
-    }, function(){
-    $(this).removeClass("group-row-box-shadow");
-  });
+$(".form-btn").click(function (e) {
+  var id = e.target.attributes.href.value ? e.target.attributes.href.value.replace("#", "") : "";
+  console.log(id)
+  $(".md-step").removeClass('active');
+  var classes = document.getElementById(id + "id").className;
+  document.getElementById(id + "id").className = classes + " active";
+  //   $(id+"id").removeClass('active');
+  $(".form-btn").removeClass('active');
+});
+
+$(".group-row").hover(function () {
+  $(this).addClass("group-row-box-shadow");
+}, function () {
+  $(this).removeClass("group-row-box-shadow");
+});
+

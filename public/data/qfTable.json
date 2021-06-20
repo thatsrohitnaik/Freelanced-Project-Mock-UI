@@ -1,0 +1,148 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "fname": "1.msg",
+            "attachment": "",
+            "sourceFile": "",
+            "ext": "",
+            "duplicate": "",
+            "duplicateOf": "",
+            "spam": "TRUE",
+            "fromToCCDS": "",
+            "processingError": ""
+        },
+        {
+            "id": "2",
+            "fname": "2.msg",
+            "attachment": "",
+            "sourceFile": "",
+            "ext": "",
+            "duplicate": "",
+            "duplicateOf": "1.msg",
+            "spam": "",
+            "fromToCCDS": "",
+            "processingError": ""
+        },
+        {
+            "id": "1",
+            "fname": "3.msg",
+            "attachment": "",
+            "sourceFile": "",
+            "ext": "",
+            "duplicate": "",
+            "duplicateOf": "",
+            "spam": "TRUE",
+            "fromToCCDS": "",
+            "processingError": ""
+        },
+        {
+            "id": "2",
+            "fname": "4.msg",
+            "attachment": "",
+            "sourceFile": "",
+            "ext": "",
+            "duplicate": "",
+            "duplicateOf": "1.msg",
+            "spam": "",
+            "fromToCCDS": "",
+            "processingError": ""
+        },
+        {
+            "id": "1",
+            "fname": "5.msg",
+            "attachment": "",
+            "sourceFile": "",
+            "ext": "",
+            "duplicate": "",
+            "duplicateOf": "",
+            "spam": "TRUE",
+            "fromToCCDS": "",
+            "processingError": ""
+        },
+        {
+            "id": "2",
+            "fname": "6.msg",
+            "attachment": "",
+            "sourceFile": "",
+            "ext": "",
+            "duplicate": "",
+            "duplicateOf": "1.msg",
+            "spam": "",
+            "fromToCCDS": "",
+            "processingError": ""
+        },
+        {
+            "id": "1",
+            "fname": "11.msg",
+            "attachment": "",
+            "sourceFile": "",
+            "ext": "",
+            "duplicate": "",
+            "duplicateOf": "",
+            "spam": "TRUE",
+            "fromToCCDS": "",
+            "processingError": ""
+        },
+        {
+            "id": "2",
+            "fname": "12.msg",
+            "attachment": "",
+            "sourceFile": "",
+            "ext": "",
+            "duplicate": "",
+            "duplicateOf": "1.msg",
+            "spam": "",
+            "fromToCCDS": "",
+            "processingError": ""
+        },
+        {
+            "id": "1",
+            "fname": "13.msg",
+            "attachment": "",
+            "sourceFile": "",
+            "ext": "",
+            "duplicate": "",
+            "duplicateOf": "",
+            "spam": "TRUE",
+            "fromToCCDS": "",
+            "processingError": ""
+        },
+        {
+            "id": "2",
+            "fname": "14.msg",
+            "attachment": "",
+            "sourceFile": "",
+            "ext": "",
+            "duplicate": "",
+            "duplicateOf": "1.msg",
+            "spam": "",
+            "fromToCCDS": "",
+            "processingError": ""
+        },
+        {
+            "id": "1",
+            "fname": "15.msg",
+            "attachment": "",
+            "sourceFile": "",
+            "ext": "",
+            "duplicate": "",
+            "duplicateOf": "",
+            "spam": "TRUE",
+            "fromToCCDS": "",
+            "processingError": ""
+        },
+        {
+            "id": "2",
+            "fname": "16.msg",
+            "attachment": "",
+            "sourceFile": "",
+            "ext": "",
+            "duplicate": "",
+            "duplicateOf": "1.msg",
+            "spam": "",
+            "fromToCCDS": "",
+            "processingError": ""
+        }
+    ]
+}
