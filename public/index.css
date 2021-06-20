@@ -124,10 +124,23 @@
   color:var(--white);
   }
   
-  .button-big p {
+  .button-big p, .button-x-big p {
   color:var(--white);
   }
-  
+  .button-x-big {
+  height:200px;
+  width:100%;
+  max-width: 400px;
+  display:block;
+  margin: auto;
+  margin-bottom: 10px;
+  }
+  .button-x-big i{
+  font-size: xxx-large;
+  padding-bottom: 10px;
+  color: white;
+  }
+
   .primary-button {
   background-color:var(--primary);
   }
@@ -632,7 +645,7 @@
   
   .nav-tabs .nav-link {
   border:none;
-  color:#050505c7;
+  color:#3c3c3c;
   }
   
   .dropdown-submenu {
@@ -1339,4 +1352,20 @@
  #qfTable .dtr-control, .responsive-hide{
 
  }
+}
+
+#sidenavTab input::placeholder {
+  color: black;
+}
+
+.orange-button {
+  background-color: var(--orange);
+}
+
+.button-block{
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: white;
+  margin-top: 15px;
+  box-shadow:0 1px 2px 0 rgba(0,0,0,0.2),0 1px 4px 0 rgba(0,0,0,0.19);
 }
