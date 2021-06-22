@@ -1,0 +1,56 @@
+{
+    "data":[{
+        "text" : "RACHEL",
+        "label" : "NAME",
+        "regex" : "TRUE",
+        "isKudse" : "FALSE",
+        "classification" : "DS",
+        "ml" : "TRUE",
+        "redact": "DEFAULT"
+    },
+    {
+        "text" : "ROSS",
+        "label" : "NAME",
+        "regex" : "TRUE",
+        "isKudse" : "FALSE",
+        "classification" : "DS",
+        "ml" : "TRUE",
+        "redact": "DEFAULT"
+    },
+    {
+        "text" : "MONICA",
+        "label" : "NAME",
+        "regex" : "TRUE",
+        "isKudse" : "FALSE",
+        "classification" : "DS",
+        "ml" : "TRUE",
+        "redact": "DEFAULT"
+    },
+    {
+        "text" : "PHOEBE",
+        "label" : "NAME",
+        "regex" : "TRUE",
+        "isKudse" : "FALSE",
+        "classification" : "DS",
+        "ml" : "TRUE",
+        "redact": "DEFAULT"
+    },
+    {
+        "text" : "CHANDLER",
+        "label" : "NAME",
+        "regex" : "TRUE",
+        "isKudse" : "FALSE",
+        "classification" : "DS",
+        "ml" : "TRUE",
+        "redact": "DEFAULT"
+    },
+    {
+        "text" : "JOEY",
+        "label" : "NAME",
+        "regex" : "TRUE",
+        "isKudse" : "FALSE",
+        "classification" : "DS",
+        "ml" : "TRUE",
+        "redact": "DEFAULT"
+    }]
+}

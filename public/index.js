@@ -51,6 +51,35 @@ $(document).ready(function () {
   }
   )
 
+  $("#fileTable").DataTable({
+    dom: "<<t>lp>",
+    ajax: "data/fileDetail.json",
+    pageLength: 5,
+    lengthMenu: [5, 10, 25, 50, 75, 100],
+    language: {
+      paginate: {
+        previous: "<",
+        next: ">"
+      },
+      lengthMenu: "Pages Per Row _MENU_  "
+    },
+    columnDefs: [
+      { targets: 0, data: "text" },
+      { targets: 1, data: "label" },
+      { targets: 2, data: "regex" },
+      { targets: 3, data: "isKudse" },
+      { targets: 4, data: "classification" },
+      { targets: 5, data: "ml" },
+      { targets: 6, data: "redact" }
+
+    ], 
+    responsive:true,
+    order: [[0, "asc"]],
+  });
+
+
+
+
   $("#qfTable").DataTable({
     dom: "<<t>lp>",
     ajax: "data/qfTable.json",
@@ -118,6 +147,15 @@ $(document).ready(function () {
 
 });
 
+// $('#data-table').DataTable( {
+//   createdRow: function( row, data, dataIndex ) {
+//       // Set the data-status attribute, and add a class
+//       $( row ).find('td:eq(0)')
+//           .attr('data-status', data.status ? 'locked' : 'unlocked')
+//           .addClass('asset-context box');
+//   }
+// } );
+
 $(document).ready(function () {
   $("#dsTable tfoot th").each(function () {
     var title = $(this).text();
@@ -133,6 +171,14 @@ $(document).ready(function () {
   var table = $("#dsTable").DataTable({
     dom: "<<t>lp>",
     ajax: "data/dsTable.json",
+    createdRow: function( row, data, dataIndex ) {
+      // Set the data-status attribute, and add a class
+      // data-toggle="modal"
+      $( row ).find('td')
+          .attr('data-target', '#file-detail-modal')
+          .attr('data-toggle','modal')
+         // .addClass('asset-context box');
+     },
     pageLength: 5,
     lengthMenu: [5, 10, 25, 50, 75, 100],
     language: {
