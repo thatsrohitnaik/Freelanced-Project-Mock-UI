@@ -239,14 +239,14 @@ $(document).ready(function () {
       { targets: 9, data: "fromToCCDS", class:"clickable"},
       { targets: 10, data: "processingError", class:"clickable" }
     ],
-    createdRow: function (row, data, dataIndex) {
-      // Set the data-status attribute, and add a class
-      // data-toggle="modal"
-      $(row).find('.clickable')
-        .attr('data-target', '#file-detail-modal-2')
-        .attr('data-toggle', 'modal')
-      // .addClass('asset-context box');
-    },
+    // createdRow: function (row, data, dataIndex) {
+    //   // Set the data-status attribute, and add a class
+    //   // data-toggle="modal" data-target="#file-detail-modal-2"
+    //   $(row).find('.clickable')
+    //     .attr('data-target', '#file-detail-modal-2')
+    //     .attr('data-toggle', 'modal')
+    //   // .addClass('asset-context box');
+    // },
     select: {
       style: 'multi',
       selector: 'td:nth-child(2)'
@@ -367,7 +367,7 @@ $(document).ready(function () {
             `    <div class="row expanded-row">
                     <div class="col-lg-3">
                         <ul class="list-group">
-                        <li class="list-group-item"><span>` +
+                        <li class="list-group-item" data-toggle="modal" data-target="#file-detail-modal-2"><span>` +
             email +
             `</span></li>
                         <li class="list-group-item"><input class="form-control" type="text" /></li>
@@ -474,7 +474,7 @@ $(document).ready(function () {
                 <div class="row expanded-row">
                     <div class="col-lg-3">
                         <ul class="list-group">
-                            <li class="list-group-item"><span>` +
+                            <li class="list-group-item" data-toggle="modal" data-target="#file-detail-modal-2"><span>` +
             email +
             `</span></li>
                             <li class="list-group-item"><input class="form-control" type="text" /></li>
