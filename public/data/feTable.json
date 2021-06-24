@@ -1,0 +1,96 @@
+{
+    "data": [
+        {
+            "file": "1.msg",
+            "label": "PERSON",
+            "fileClassification": "DS",
+            "maxClassification": "DS",
+            "kudse": "TOM CRUISE",
+            "fcp": "TOM CRUISE",
+            "mcp": "4",
+            "dsnm": "4",
+            "dsgm": "4",
+            "kudsep": "TRUE",
+            "fromtoccds": "TRUE",
+            "inattachment": "0"
+        },    {
+            "file": "2.msg",
+            "label": "PERSON",
+            "fileClassification": "DS",
+            "maxClassification": "DS",
+            "kudse": "TOM CRUISE",
+            "fcp": "TOM CRUISE",
+            "mcp": "4",
+            "dsnm": "4",
+            "dsgm": "4",
+            "kudsep": "TRUE",
+            "fromtoccds": "TRUE",
+            "inattachment": "0"
+        },    {
+            "file": "3.msg",
+            "label": "PERSON",
+            "fileClassification": "DS",
+            "maxClassification": "DS",
+            "kudse": "TOM CRUISE",
+            "fcp": "TOM CRUISE",
+            "mcp": "4",
+            "dsnm": "4",
+            "dsgm": "4",
+            "kudsep": "TRUE",
+            "fromtoccds": "TRUE",
+            "inattachment": "0"
+        },    {
+            "file": "4.msg",
+            "label": "PERSON",
+            "fileClassification": "DS",
+            "maxClassification": "DS",
+            "kudse": "TOM CRUISE",
+            "fcp": "TOM CRUISE",
+            "mcp": "4",
+            "dsnm": "4",
+            "dsgm": "4",
+            "kudsep": "TRUE",
+            "fromtoccds": "TRUE",
+            "inattachment": "0"
+        },    {
+            "file": "5.msg",
+            "label": "PERSON",
+            "fileClassification": "DS",
+            "maxClassification": "DS",
+            "kudse": "TOM CRUISE",
+            "fcp": "TOM CRUISE",
+            "mcp": "4",
+            "dsnm": "4",
+            "dsgm": "4",
+            "kudsep": "TRUE",
+            "fromtoccds": "TRUE",
+            "inattachment": "0"
+        },    {
+            "file": "6.msg",
+            "label": "PERSON",
+            "fileClassification": "DS",
+            "maxClassification": "DS",
+            "kudse": "TOM CRUISE",
+            "fcp": "TOM CRUISE",
+            "mcp": "4",
+            "dsnm": "4",
+            "dsgm": "4",
+            "kudsep": "TRUE",
+            "fromtoccds": "TRUE",
+            "inattachment": "0"
+        },    {
+            "file": "7.msg",
+            "label": "PERSON",
+            "fileClassification": "DS",
+            "maxClassification": "DS",
+            "kudse": "TOM CRUISE",
+            "fcp": "TOM CRUISE",
+            "mcp": "4",
+            "dsnm": "4",
+            "dsgm": "4",
+            "kudsep": "TRUE",
+            "fromtoccds": "TRUE",
+            "inattachment": "0"
+        }
+    ]
+}

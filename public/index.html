@@ -751,152 +751,153 @@
         </div>
     </div>
     <br />
-<div class="modal file-detail-popup row" id="file-detail-modal" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="col-lg-5">
-                    <div>
-                        <button class="btn button-slim default-button">1/12</button>
-                    </div>
-                    <div class="pdf-box">
-                    </div>
-                </div>
-                <div class="col-lg-7">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <button class="btn button-slim primary-button">PREVIOUS</button>
+    <div class="modal file-detail-popup row" id="file-detail-modal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="col-lg-5">
+                        <div>
+                            <button class="btn button-slim default-button">1/12</button>
                         </div>
-                        <div class="col-sm-4">
-                            <span class="span-text-align-center"> FILE: 183.msg </span>
-                        </div>
-                        <div class="col-sm-4">
-                            <button class="btn button-slim primary-button">NEXT</button>
+                        <div class="pdf-box">
                         </div>
                     </div>
-                    <div>
-                        <ul class="nav nav-tabs row " id="file-detail-tab" role="tablist">
-                            <li class="nav-item col-md-6">
-                                <a class="nav-link active" data-toggle="tab" href="#file-detail-tab-one"
-                                    aria-selected="true">
-                                    KNOWN ENTITIES
-                                </a>
-                            </li>
-                            <li class="nav-item col-md-6">
-                                <a class="nav-link" data-toggle="tab" href="#file-detail-tab-two">
-                                    ENTITY LABELS
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="tab-content file-detail-tab" id="file-detail-tab">
-                            <div class="tab-pane fade in active show" id="file-detail-tab-one">
-                                <p class="para">Add known entites about the subject below</p>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="file-detail-input-div">
-                                            <label for="fname">TEXT</label>
-                                            <input type="text" id="fname" name="fname">
-                                        </div>
-                                        <div class="file-detail-input-div">
-                                            <label for="fname">LABEL</label>
-                                            <input type="text" id="fname" name="fname">
-                                        </div>
-                                        <div class="expanded-row-btn-group btn-group btn-group-toggle file-detail-group"
-                                            data-toggle="buttons">
-                                            <label class="btn btn-secondary default-button active">
-                                                <input type="radio" name="options" id="option1" checked> 
-                                                <span>ALWAYS REDACT</span>
-                                            </label>
-                                            <label class="btn btn-secondary default-button">
-                                                <input type="radio" name="options" id="option2"> 
-                                                            <span>NEVER REDACT</span>
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <button class="btn button-slim primary-button">PREVIOUS</button>
+                            </div>
+                            <div class="col-sm-4">
+                                <span class="span-text-align-center"> FILE: 183.msg </span>
+                            </div>
+                            <div class="col-sm-4">
+                                <button class="btn button-slim primary-button">NEXT</button>
+                            </div>
+                        </div>
+                        <div>
+                            <ul class="nav nav-tabs row " id="file-detail-tab" role="tablist">
+                                <li class="nav-item col-md-6">
+                                    <a class="nav-link active" data-toggle="tab" href="#file-detail-tab-one"
+                                        aria-selected="true">
+                                        KNOWN ENTITIES
+                                    </a>
+                                </li>
+                                <li class="nav-item col-md-6">
+                                    <a class="nav-link" data-toggle="tab" href="#file-detail-tab-two">
+                                        ENTITY LABELS
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content file-detail-tab" id="file-detail-tab">
+                                <div class="tab-pane fade in active show" id="file-detail-tab-one">
+                                    <p class="para">Add known entites about the subject below</p>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="file-detail-input-div">
+                                                <label for="fname">TEXT</label>
+                                                <input type="text" id="fname" name="fname">
+                                            </div>
+                                            <div class="file-detail-input-div">
+                                                <label for="fname">LABEL</label>
+                                                <input type="text" id="fname" name="fname">
+                                            </div>
+                                            <div class="expanded-row-btn-group btn-group btn-group-toggle file-detail-group"
+                                                data-toggle="buttons">
+                                                <label class="btn btn-secondary default-button active">
+                                                    <input type="radio" name="options" id="option1" checked>
+                                                    <span>ALWAYS REDACT</span>
+                                                </label>
+                                                <label class="btn btn-secondary default-button">
+                                                    <input type="radio" name="options" id="option2">
+                                                    <span>NEVER REDACT</span>
 
-                                            </label>
-                                            <label class="btn btn-secondary default-button">
-                                                <input type="radio" name="options" id="option3"> 
-                                                <span> DIRECT </span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 switch-box">
-                                        <div class="row">
-                                            <span class="col-sm-7 top-5">Classification</span>
-                                            <div class="col-sm-5">
-                                                <label class="switch">
-                                                    <input type="checkbox" id="togBtn">
-                                                    <div class="slider round">
-                                                        <span class="on">NON DS</span>
-                                                        <span class="off">DS</span>
-                                                    </div>
+                                                </label>
+                                                <label class="btn btn-secondary default-button">
+                                                    <input type="radio" name="options" id="option3">
+                                                    <span> DIRECT </span>
                                                 </label>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <span class="col-sm-7 top-5">BEFORE ML SEARCH</span>
-                                            <div class="col-sm-5">
-                                                <label class="switch">
-                                                    <input type="checkbox" checked id="togBtn">
-                                                    <div class="slider round">
-                                                        <span class="on">TRUE</span>
-                                                        <span class="off">FALSE</span>
-                                                    </div>
-                                                </label>
+                                        <div class="col-sm-6 switch-box">
+                                            <div class="row">
+                                                <span class="col-sm-7 top-5">Classification</span>
+                                                <div class="col-sm-5">
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="togBtn">
+                                                        <div class="slider round">
+                                                            <span class="on">NON DS</span>
+                                                            <span class="off">DS</span>
+                                                        </div>
+                                                    </label>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <span class="col-sm-7 top-5">REGEX</span>
-                                            <div class="col-sm-5">
-                                                <label class="switch">
-                                                    <input type="checkbox" id="togBtn">
-                                                    <div class="slider round">
-                                                        <span class="on">TRUE</span>
-                                                        <span class="off">FALSE</span>
-                                                    </div>
-                                                </label>
+                                            <div class="row">
+                                                <span class="col-sm-7 top-5">BEFORE ML SEARCH</span>
+                                                <div class="col-sm-5">
+                                                    <label class="switch">
+                                                        <input type="checkbox" checked id="togBtn">
+                                                        <div class="slider round">
+                                                            <span class="on">TRUE</span>
+                                                            <span class="off">FALSE</span>
+                                                        </div>
+                                                    </label>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <span class="col-sm-7 top-5">IS KUDSE</span>
-                                            <div class="col-sm-5">
-                                                <label class="switch">
-                                                    <input type="checkbox" id="togBtn">
-                                                    <div class="slider round">
-                                                        <span class="on">TRUE</span>
-                                                        <span class="off">FALSE</span>
-                                                    </div>
-                                                </label>
+                                            <div class="row">
+                                                <span class="col-sm-7 top-5">REGEX</span>
+                                                <div class="col-sm-5">
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="togBtn">
+                                                        <div class="slider round">
+                                                            <span class="on">TRUE</span>
+                                                            <span class="off">FALSE</span>
+                                                        </div>
+                                                    </label>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <br>
-                                        <div class="row">
-                                            <button class="btn form-btn align-right"> NEXT</button>
-                                        </div>
+                                            <div class="row">
+                                                <span class="col-sm-7 top-5">IS KUDSE</span>
+                                                <div class="col-sm-5">
+                                                    <label class="switch">
+                                                        <input type="checkbox" id="togBtn">
+                                                        <div class="slider round">
+                                                            <span class="on">TRUE</span>
+                                                            <span class="off">FALSE</span>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <button class="btn form-btn align-right"> NEXT</button>
+                                            </div>
 
 
-                                    </div>
-                                    <div class="col-sm-12 file-table-div">
-                                        <div class="container-table">
-                                            <table id="fileTable" class="main-table table display nowrap collapsed"
-                                                style="width:100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th>TEXT</th>
-                                                        <th>LABEL</th>
-                                                        <th>REGEX</th>
-                                                        <th>IS KUDE</th>
-                                                        <th>CLASSIFICATION</th>
-                                                        <th>ML SEARCH</th>
-                                                        <th>REDACT</th>
-                                                    </tr>
-                                                </thead>
-                                            </table>
+                                        </div>
+                                        <div class="col-sm-12 file-table-div">
+                                            <div class="container-table">
+                                                <table id="fileTable" class="main-table table display nowrap collapsed"
+                                                    style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>TEXT</th>
+                                                            <th>LABEL</th>
+                                                            <th>REGEX</th>
+                                                            <th>IS KUDE</th>
+                                                            <th>CLASSIFICATION</th>
+                                                            <th>ML SEARCH</th>
+                                                            <th>REDACT</th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <div class="tab-pane fade" id="file-detail-tab-two">
-                                known Entity
+                                <div class="tab-pane fade" id="file-detail-tab-two">
+                                    known Entity
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -904,7 +905,94 @@
             </div>
         </div>
     </div>
-</div>
+
+
+    <div class="modal file-detail-popup row" id="file-detail-modal-2" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body display-block">
+
+                    <button type="button" class="btn btn-default primary-button back "
+                    data-dismiss="modal"><span class="far fa-arrow-alt-circle-left icon-style"></span>Back</button>
+                    <div class="row">
+                        <div><p class="padding-fetable-para">File With Entity: Robert Smith</p></div>
+                        <div class="dropdown-div">
+                            <div>
+                                <button class="btn  dropdown-toggle" type="button" id="columnMenu1"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Choose Column
+                                </button>
+                                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="columnMenu">
+                                    <li class="dropdown-item"><a href="#">File Name</a></li>
+                                    <li class="dropdown-item"><a href="#">Full Name</a></li>
+                                    <li class="dropdown-item"><a href="#">Redact</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <button class="btn  dropdown-toggle" type="button" id="actionMenu1"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Action
+                                </button>
+                                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="actionMenu">
+                                    <li class="dropdown-item"><a href="#">Do Not Share</a></li>
+                                    <li class="dropdown-item"><a href="#">Add To Process</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item" tabindex="-1" href="#">Change Classification</a>
+                                        <ul class="dropdown-menu">
+                                            <li class="dropdown-item"><a href="#">Share With DS</a></li>
+                                            <li class="dropdown-item"><a href="#">Do Not Share</a></li>
+                                            <li class="dropdown-item"><a href="#">No Redact</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown-item"><a href="#">Change Redaction</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-table">
+                        <table id="feTable" class="main-table table display nowrap collapsed" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th>File</th>
+                                    <th>Label</th>
+                                    <th>File Classification</th>
+                                    <th>Max Classification</th>
+                                    <th>Known Unique DS Entities</th>
+                                    <th>File Closest Person</th>
+                                    <th>Max Closest Person</th>
+                                    <th>DS Name Match</th>
+                                    <th>DS Gender Match</th>
+                                    <th>Known Unique DS Entities Present</th>
+                                    <th>From /To /CC DS</th>
+                                    <th>In Attachment</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th>File</th>
+                                    <th>Label</th>
+                                    <th>File Classification</th>
+                                    <th>Max Classification</th>
+                                    <th>Known Unique DS Entities</th>
+                                    <th>File Closest Person</th>
+                                    <th>Max Closest Person</th>
+                                    <th>DS Name Match</th>
+                                    <th>DS Gender Match</th>
+                                    <th>Known Unique DS Entities Present</th>
+                                    <th>From /To /CC DS</th>
+                                    <th>In Attachment</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     </div>
     <div id="mySidenav" class="sidenav">

@@ -51,21 +51,11 @@ $(document).ready(function () {
   }
   )
 
-  $("#mysarsTable tfoot th").each(function () {
-    var title = $(this).text();
-    if (title) {
-      $(this).html(
-        '<input type="text" class="fas text-align-start" type="text" placeholder="&#xf002; Search ' +
-        title +
-        '" />'
-      );
-    }
-  });
 
   $("#mysarsTable").DataTable({
     dom: "<<t>lp>",
-    ajax: "data/mysarsTable.json",
-    pageLength: 10,
+    ajax: "data/fileDetail.json",
+    pageLength: 5,
     lengthMenu: [5, 10, 25, 50, 75, 100],
     language: {
       paginate: {
@@ -75,18 +65,11 @@ $(document).ready(function () {
       lengthMenu: "Pages Per Row _MENU_  "
     },
     columnDefs: [
-      { targets: 0, data: "sarName"},
-      { targets: 1, data: "client"},
-      { targets: 2, data: "startDate"},
-      { targets: 3, data: "deadline"},
-      { targets: 4, data: "status" },
-      {
-        targets: 5,
-        data: null,
-        orderable: false,
-        defaultContent:
-          '<span class="fas fa-ellipsis-v font-color-darkgray"></span>'
-      }
+      { targets: 0, data: "sarName" },
+      { targets: 1, data: "client" },
+      { targets: 2, data: "startDate" },
+      { targets: 3, data: "deadline" },
+      { targets: 4, data: "status" }
     ],
     responsive: true,
     order: [[0, "asc"]],
@@ -106,12 +89,12 @@ $(document).ready(function () {
       lengthMenu: "Pages Per Row _MENU_  "
     },
     columnDefs: [
-      { targets: 0, data: "text", class:"clickable"},
-      { targets: 1, data: "label", class:"clickable"},
-      { targets: 2, data: "regex", class:"clickable"},
-      { targets: 3, data: "isKudse", class:"clickable"},
-      { targets: 4, data: "classification", class:"clickable"},
-      { targets: 5, data: "ml", class:"clickable"},
+      { targets: 0, data: "text" },
+      { targets: 1, data: "label" },
+      { targets: 2, data: "regex" },
+      { targets: 3, data: "isKudse" },
+      { targets: 4, data: "classification" },
+      { targets: 5, data: "ml" },
       { targets: 6, data: "redact" }
 
     ],
@@ -159,17 +142,17 @@ $(document).ready(function () {
         'targets': 1,
       },
 
-      { targets: 2, data: "file", "width": "7%", class:"clickable"},
-      { targets: 3, data: "label", "width": "7%", class:"clickable"},
-      { targets: 4, data: "fileClassification", "width": "8%", class:"clickable"},
-      { targets: 5, data: "maxClassification", "width": "8%", class:"clickable"},
-      { targets: 6, data: "kudse", "width": "8%", class:"clickable"},
-      { targets: 7, data: "fcp", "width": "8%", class:"clickable"},
-      { targets: 8, data: "mcp", "width": "8%", class:"clickable"},
-      { targets: 9, data: "dsnm", "width": "8%", class:"clickable"},
-      { targets: 10, data: "dsgm", "width": "8%", class:"clickable"},
-      { targets: 11, data: "kudsep", "width": "8%", class:"clickable"},
-      { targets: 12, data: "fromtoccds", "width": "8%", class:"clickable"},
+      { targets: 2, data: "file", "width": "7%" },
+      { targets: 3, data: "label", "width": "7%" },
+      { targets: 4, data: "fileClassification", "width": "8%" },
+      { targets: 5, data: "maxClassification", "width": "8%" },
+      { targets: 6, data: "kudse", "width": "8%" },
+      { targets: 7, data: "fcp", "width": "8%" },
+      { targets: 8, data: "mcp", "width": "8%" },
+      { targets: 9, data: "dsnm", "width": "8%" },
+      { targets: 10, data: "dsgm", "width": "8%" },
+      { targets: 11, data: "kudsep", "width": "8%" },
+      { targets: 12, data: "fromtoccds", "width": "8%" },
       { targets: 13, data: "inattachment", "width": "8%" }
     ],
     select: {
@@ -229,20 +212,20 @@ $(document).ready(function () {
         defaultContent: "<span></span>",
         'targets': 1,
       },
-      { targets: 2, data: "fname", class:"clickable"},
-      { targets: 3, data: "attachment", class:"clickable"},
-      { targets: 4, data: "sourceFile", class:"clickable"},
-      { targets: 5, data: "ext", class:"clickable"},
-      { targets: 6, data: "duplicate", class:"clickable"},
-      { targets: 7, data: "duplicateOf", class:"clickable"},
-      { targets: 8, data: "spam", class:"clickable"},
-      { targets: 9, data: "fromToCCDS", class:"clickable"},
-      { targets: 10, data: "processingError", class:"clickable" }
+      { targets: 2, data: "fname" },
+      { targets: 3, data: "attachment" },
+      { targets: 4, data: "sourceFile" },
+      { targets: 5, data: "ext" },
+      { targets: 6, data: "duplicate" },
+      { targets: 7, data: "duplicateOf" },
+      { targets: 8, data: "spam" },
+      { targets: 9, data: "fromToCCDS" },
+      { targets: 10, data: "processingError" }
     ],
     createdRow: function (row, data, dataIndex) {
       // Set the data-status attribute, and add a class
       // data-toggle="modal"
-      $(row).find('.clickable')
+      $(row).find('td')
         .attr('data-target', '#file-detail-modal-2')
         .attr('data-toggle', 'modal')
       // .addClass('asset-context box');
@@ -298,7 +281,7 @@ $(document).ready(function () {
     createdRow: function (row, data, dataIndex) {
       // Set the data-status attribute, and add a class
       // data-toggle="modal"
-      $(row).find('.clickable')
+      $(row).find('td')
         .attr('data-target', '#file-detail-modal')
         .attr('data-toggle', 'modal')
       // .addClass('asset-context box');
@@ -319,13 +302,13 @@ $(document).ready(function () {
         defaultContent: "<span></span>",
         orderable: false
       },
-      { targets: 1, data: "email", class:"clickable"},
-      { targets: 2, data: "person", class:"clickable"},
-      { targets: 3, data: "fileCount", class:"clickable"},
-      { targets: 4, data: "fromCount", class:"clickable"},
-      { targets: 5, data: "toCount", class:"clickable"},
-      { targets: 6, data: "ccCount", class:"clickable"},
-      { targets: 7, data: "classification", class:"clickable"},
+      { targets: 1, data: "email" },
+      { targets: 2, data: "person" },
+      { targets: 3, data: "fileCount" },
+      { targets: 4, data: "fromCount" },
+      { targets: 5, data: "toCount" },
+      { targets: 6, data: "ccCount" },
+      { targets: 7, data: "classification" },
       {
         targets: 8,
         data: null,
