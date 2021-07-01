@@ -607,11 +607,11 @@
                         come here describeing something wonderful.</p>
                     <div class="modal-body">
                         <ul class="list-group main-ul">
-                            <li class="list-group-item group-row">
+                            <li class="list-group-item group-row group-row-box-shadow">
                                 <ul class="list-group">
                                     <li class="list-group-item">
                                         <label class="container-checkbox">
-                                            <input type="checkbox" checked="checked">
+                                            <input type="checkbox" checked="checked" id="one-check" onchange="toggle('one-check')">
                                             <span class="checkmark-box"></span>
                                         </label>
                                     </li>
@@ -629,7 +629,7 @@
                                 <ul class="list-group">
                                     <li class="list-group-item">
                                         <label class="container-checkbox">
-                                            <input type="checkbox">
+                                            <input type="checkbox" id="two-check" onchange="toggle('two-check')">
                                             <span class="checkmark-box"></span>
                                         </label>
                                     </li>
@@ -648,7 +648,7 @@
                                 <ul class="list-group">
                                     <li class="list-group-item">
                                         <label class="container-checkbox">
-                                            <input type="checkbox">
+                                            <input type="checkbox" id="three-check" onchange="toggle('three-check')">
                                             <span class="checkmark-box"></span>
                                         </label>
                                     </li>
@@ -667,7 +667,7 @@
                                 <ul class="list-group">
                                     <li class="list-group-item">
                                         <label class="container-checkbox">
-                                            <input type="checkbox">
+                                            <input type="checkbox" id="four-check" onchange="toggle('four-check')">
                                             <span class="checkmark-box"></span>
                                         </label>
                                     </li>
@@ -686,7 +686,7 @@
                                 <ul class="list-group">
                                     <li class="list-group-item">
                                         <label class="container-checkbox">
-                                            <input type="checkbox">
+                                            <input type="checkbox" id="five-check" onchange="toggle('five-check')">
                                             <span class="checkmark-box"></span>
                                         </label>
                                     </li>
@@ -705,7 +705,7 @@
                                 <ul class="list-group">
                                     <li class="list-group-item">
                                         <label class="container-checkbox">
-                                            <input type="checkbox">
+                                            <input type="checkbox" id="six-check" onchange="toggle('six-check')">
                                             <span class="checkmark-box"></span>
                                         </label>
                                     </li>
@@ -724,7 +724,7 @@
                                 <ul class="list-group">
                                     <li class="list-group-item">
                                         <label class="container-checkbox">
-                                            <input type="checkbox">
+                                            <input type="checkbox" id="seven-check" onchange="toggle('seven-check')">
                                             <span class="checkmark-box"></span>
                                         </label>
                                     </li>
@@ -794,12 +794,12 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="file-detail-input-div">
-                                                <label for="fname">TEXT</label>
-                                                <input type="text" id="fname" name="fname">
+                                                <label for="text">TEXT</label>
+                                                <input type="text" id="text" name="text">
                                             </div>
                                             <div class="file-detail-input-div">
-                                                <label for="fname">LABEL</label>
-                                                <input type="text" id="fname" name="fname">
+                                                <label for="label">LABEL</label>
+                                                <input type="text" id="label" name="label">
                                             </div>
                                             <div class="expanded-row-btn-group btn-group btn-group-toggle file-detail-group"
                                                 data-toggle="buttons">

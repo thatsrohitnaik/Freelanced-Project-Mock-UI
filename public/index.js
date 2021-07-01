@@ -41,7 +41,6 @@ $(document).ready(function () {
   $("#qfTable tfoot th").each(function () {
     var title = $(this).text();
     if (title) {
-      console.log(title)
       $(this).html(
         '<input type="text" class="fas text-align-start" type="text" placeholder="&#xf002; Search ' +
         title +
@@ -355,8 +354,6 @@ $(document).ready(function () {
               : "";
           }).join("");
 
-          console.log(data);
-
           var divData = data
             ? '<div class="row background-default">' + data + "</div>"
             : "";
@@ -620,7 +617,6 @@ function closeNav() {
 }
 
 function createChip(e) {
-  console.log(e)
   var value = document.getElementById(e).value;
   document.getElementById(e).value = null;
   var chipDiv = document.getElementById(e + "Chips").innerHTML;
@@ -650,7 +646,6 @@ $(".md-step").click(function () {
 
 $(".form-btn").click(function (e) {
   var id = e.target.attributes.href.value ? e.target.attributes.href.value.replace("#", "") : "";
-  console.log(id)
   $(".md-step").removeClass('active');
   var classes = document.getElementById(id + "id").className;
   document.getElementById(id + "id").className = classes + " active";
@@ -658,9 +653,34 @@ $(".form-btn").click(function (e) {
   $(".form-btn").removeClass('active');
 });
 
-$(".group-row").hover(function () {
-  $(this).addClass("group-row-box-shadow");
-}, function () {
-  $(this).removeClass("group-row-box-shadow");
-});
+// $(".group-row").hover(function () {
+//   $(this).addClass("group-row-box-shadow");
+// }, function () {
+//   $(this).removeClass("group-row-box-shadow");
+// });
 
+// $(".checkmark-box").click(function () {
+//   console.log(this, "ddddd")
+//   if (this.checked) {
+//     $(this).parent().parent().parent().addClass("group-row-box-shadow");
+//   }
+//   else {
+//     $(this).parent().parent().parent().removeClass("group-row-box-shadow");
+//   }
+// });
+
+// $(".checkmark-box").after().click(function(){
+ 
+//     $(this).parent().parent().parent().parent().addClass("group-row-box-shadow");
+    
+// });
+
+
+function toggle(id){
+if(document.getElementById(id).checked){
+  document.getElementById(id).parentElement.parentElement.parentElement.parentElement.classList.add('group-row-box-shadow')
+}
+else{
+  document.getElementById(id).parentElement.parentElement.parentElement.parentElement.classList.remove('group-row-box-shadow')
+}
+}
