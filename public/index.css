@@ -881,6 +881,7 @@ body {
     justify-content: left!important;
   }
   .back-image {
+    background-size: cover;
     background-image: url("./back.png");
     position: absolute;
     width: 100%;
